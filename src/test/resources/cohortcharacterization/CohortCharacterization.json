@@ -78,7 +78,7 @@
       "design": [
         {
           "name": "Male",
-          "expression": {
+          "criteriaGroup": {
             "empty": false,
             "Type": "ALL",
             "CriteriaList": [ ],
@@ -105,7 +105,7 @@
         },
         {
           "name": "Female",
-          "expression": {
+          "criteriaGroup": {
             "empty": false,
             "Type": "ALL",
             "CriteriaList": [ ],
