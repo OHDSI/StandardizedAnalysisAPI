@@ -148,7 +148,7 @@ public class CohortCharacterizationTest extends BaseTest {
                                 return "Male";
                             }
 
-                            public CriteriaGroup getCriteriaGroup() {
+                            public CriteriaGroup getExpression() {
 
                                 Concept maleConcept = new Concept();
                                 maleConcept.conceptCode = "M";
@@ -179,7 +179,7 @@ public class CohortCharacterizationTest extends BaseTest {
                                 return "Female";
                             }
 
-                            public CriteriaGroup getCriteriaGroup() {
+                            public CriteriaGroup getExpression() {
 
                                 Concept femaleConcept = new Concept();
                                 femaleConcept.conceptCode = "F";

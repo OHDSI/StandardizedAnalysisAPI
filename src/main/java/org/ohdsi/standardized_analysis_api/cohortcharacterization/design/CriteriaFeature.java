@@ -10,6 +10,6 @@ public interface CriteriaFeature {
     @JsonGetter("name")
     String getName();
 
-    @JsonGetter("criteriaGroup")
-    CriteriaGroup getCriteriaGroup();
+    @JsonGetter("expression")
+    CriteriaGroup getExpression();
 }
