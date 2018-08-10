@@ -1,5 +1,6 @@
 package org.ohdsi.standardized_analysis_api.cohortcharacterization;
 
+import java.util.Collections;
 import org.junit.Assert;
 import org.junit.Test;
 import org.ohdsi.circe.cohortdefinition.CohortExpression;
@@ -16,6 +17,7 @@ import org.ohdsi.circe.cohortdefinition.ResultLimit;
 import org.ohdsi.circe.vocabulary.Concept;
 import org.ohdsi.circe.vocabulary.ConceptSetExpression;
 import org.ohdsi.standardized_analysis_api.Utils;
+import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.Cohort;
 import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.CohortCharacterization;
 import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.CohortCharacterizationParam;
 import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.CriteriaFeature;
@@ -38,53 +40,68 @@ public class CohortCharacterizationTest extends BaseTest {
 
         CohortCharacterization cc = new CohortCharacterization() {
 
-            public List<CohortExpression> getCohortExpressions() {
+            @Override
+            public List<Cohort> getCohorts() {
 
-                CohortExpression clopidogrelExpression = new CohortExpression();
+                Cohort cohort = new Cohort() {
 
-                ConceptSetExpression.ConceptSetItem clopidogrelConceptSetItem = new ConceptSetExpression.ConceptSetItem();
-                clopidogrelConceptSetItem.includeDescendants = true;
+                    public String getName() {
 
-                clopidogrelConceptSetItem.concept = new Concept();
-                clopidogrelConceptSetItem.concept.conceptId = 1322184L;
-                clopidogrelConceptSetItem.concept.conceptName = "clopidogrel";
-                clopidogrelConceptSetItem.concept.standardConcept = "S";
-                clopidogrelConceptSetItem.concept.invalidReason = "V";
-                clopidogrelConceptSetItem.concept.conceptCode = "32968";
-                clopidogrelConceptSetItem.concept.domainId = "Drug";
-                clopidogrelConceptSetItem.concept.vocabularyId = "RxNorm";
-                clopidogrelConceptSetItem.concept.conceptClassId = "Ingredient";
+                        return "clopidogrel test";
+                    }
 
-                ConceptSet clopidogrelConceptSet = new ConceptSet();
-                clopidogrelConceptSet.id = 0;
-                clopidogrelConceptSet.name = "clopidogrel";
-                clopidogrelConceptSet.expression = new ConceptSetExpression();
-                clopidogrelConceptSet.expression.items = new ConceptSetExpression.ConceptSetItem[] { clopidogrelConceptSetItem };
+                    public String getDescription() {
 
-                DrugExposure de = new DrugExposure();
-                de.codesetId = 0;
+                        return "clopidogrel test";
+                    }
 
-                PrimaryCriteria primaryCriteria = new PrimaryCriteria();
-                primaryCriteria.primaryLimit = new ResultLimit();
-                primaryCriteria.observationWindow = new ObservationFilter();
-                primaryCriteria.criteriaList = new Criteria[] { de };
+                    public CohortExpression getCohortExpression() {
 
-                clopidogrelExpression.conceptSets = new ConceptSet[] { clopidogrelConceptSet };
-                clopidogrelExpression.censoringCriteria = new Criteria[] {};
-                clopidogrelExpression.censorWindow = new Period();
-                clopidogrelExpression.primaryCriteria = primaryCriteria;
+                        CohortExpression clopidogrelExpression = new CohortExpression();
 
-                return Arrays.asList(clopidogrelExpression);
+                        ConceptSetExpression.ConceptSetItem clopidogrelConceptSetItem = new ConceptSetExpression.ConceptSetItem();
+                        clopidogrelConceptSetItem.includeDescendants = true;
+
+                        clopidogrelConceptSetItem.concept = new Concept();
+                        clopidogrelConceptSetItem.concept.conceptId = 1322184L;
+                        clopidogrelConceptSetItem.concept.conceptName = "clopidogrel";
+                        clopidogrelConceptSetItem.concept.standardConcept = "S";
+                        clopidogrelConceptSetItem.concept.invalidReason = "V";
+                        clopidogrelConceptSetItem.concept.conceptCode = "32968";
+                        clopidogrelConceptSetItem.concept.domainId = "Drug";
+                        clopidogrelConceptSetItem.concept.vocabularyId = "RxNorm";
+                        clopidogrelConceptSetItem.concept.conceptClassId = "Ingredient";
+
+                        ConceptSet clopidogrelConceptSet = new ConceptSet();
+                        clopidogrelConceptSet.id = 0;
+                        clopidogrelConceptSet.name = "clopidogrel";
+                        clopidogrelConceptSet.expression = new ConceptSetExpression();
+                        clopidogrelConceptSet.expression.items = new ConceptSetExpression.ConceptSetItem[] { clopidogrelConceptSetItem };
+
+                        DrugExposure de = new DrugExposure();
+                        de.codesetId = 0;
+
+                        PrimaryCriteria primaryCriteria = new PrimaryCriteria();
+                        primaryCriteria.primaryLimit = new ResultLimit();
+                        primaryCriteria.observationWindow = new ObservationFilter();
+                        primaryCriteria.criteriaList = new Criteria[] { de };
+
+                        clopidogrelExpression.conceptSets = new ConceptSet[] { clopidogrelConceptSet };
+                        clopidogrelExpression.censoringCriteria = new Criteria[] {};
+                        clopidogrelExpression.censorWindow = new Period();
+                        clopidogrelExpression.primaryCriteria = primaryCriteria;
+                        
+                        return clopidogrelExpression;
+                    }
+                };
+
+                return Collections.singletonList(cohort);
             }
 
+            @Override
             public List<FeatureAnalysis> getFeatureAnalyses() {
 
                 FeatureAnalysis presetAnalysis = new FeatureAnalysis() {
-
-                    public Long getId() {
-
-                        return 1L;
-                    }
 
                     public FeatureAnalysisType getType() {
 
@@ -113,11 +130,6 @@ public class CohortCharacterizationTest extends BaseTest {
                 };
 
                 FeatureAnalysis criteriaAnalysis = new FeatureAnalysis() {
-
-                    public Long getId() {
-
-                        return 2L;
-                    }
 
                     public FeatureAnalysisType getType() {
 
@@ -208,11 +220,6 @@ public class CohortCharacterizationTest extends BaseTest {
                 };
 
                 FeatureAnalysis rawSqlAnalysis = new FeatureAnalysis() {
-
-                    public Long getId() {
-
-                        return 3L;
-                    }
 
                     public FeatureAnalysisType getType() {
 
