@@ -16,8 +16,7 @@ public class Utils {
 
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.disable(
-                MapperFeature.AUTO_DETECT_CREATORS, 
-//                MapperFeature.AUTO_DETECT_FIELDS, 
+                MapperFeature.AUTO_DETECT_CREATORS,
                 MapperFeature.AUTO_DETECT_GETTERS, 
                 MapperFeature.AUTO_DETECT_IS_GETTERS
         );

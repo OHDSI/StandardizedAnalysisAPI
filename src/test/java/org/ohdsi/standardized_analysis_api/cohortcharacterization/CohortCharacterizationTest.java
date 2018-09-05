@@ -17,7 +17,7 @@ import org.ohdsi.circe.cohortdefinition.ResultLimit;
 import org.ohdsi.circe.vocabulary.Concept;
 import org.ohdsi.circe.vocabulary.ConceptSetExpression;
 import org.ohdsi.standardized_analysis_api.Utils;
-import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.Cohort;
+import org.ohdsi.standardized_analysis_api.Cohort;
 import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.CohortCharacterization;
 import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.CohortCharacterizationParam;
 import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.CriteriaFeature;
