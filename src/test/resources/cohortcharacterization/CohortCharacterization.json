@@ -1,68 +1,71 @@
 {
-  "cohortExpressions": [
+  "cohorts": [
     {
-      "PrimaryCriteria": {
-        "CriteriaList": [
+      "name": "clopidogrel test",
+      "description": "clopidogrel test",
+      "expression": {
+        "PrimaryCriteria": {
+          "CriteriaList": [
+            {
+              "DrugExposure": {
+                "CodesetId": 0,
+                "DrugTypeExclude": false
+              }
+            }
+          ],
+          "ObservationWindow": {
+            "PriorDays": 0,
+            "PostDays": 0
+          },
+          "PrimaryCriteriaLimit": {
+            "Type": "First"
+          }
+        },
+        "ConceptSets": [
           {
-            "DrugExposure": {
-              "CodesetId": 0,
-              "DrugTypeExclude": false
+            "id": 0,
+            "name": "clopidogrel",
+            "expression": {
+              "items": [
+                {
+                  "concept": {
+                    "CONCEPT_ID": 1322184,
+                    "CONCEPT_NAME": "clopidogrel",
+                    "STANDARD_CONCEPT": "S",
+                    "STANDARD_CONCEPT_CAPTION": "Standard",
+                    "INVALID_REASON": "V",
+                    "INVALID_REASON_CAPTION": "Valid",
+                    "CONCEPT_CODE": "32968",
+                    "DOMAIN_ID": "Drug",
+                    "VOCABULARY_ID": "RxNorm",
+                    "CONCEPT_CLASS_ID": "Ingredient"
+                  },
+                  "isExcluded": false,
+                  "includeDescendants": true,
+                  "includeMapped": false
+                }
+              ]
             }
           }
         ],
-        "ObservationWindow": {
-          "PriorDays": 0,
-          "PostDays": 0
-        },
-        "PrimaryCriteriaLimit": {
+        "QualifiedLimit": {
           "Type": "First"
-        }
-      },
-      "ConceptSets": [
-        {
-          "id": 0,
-          "name": "clopidogrel",
-          "expression": {
-            "items": [
-              {
-                "concept": {
-                  "CONCEPT_ID": 1322184,
-                  "CONCEPT_NAME": "clopidogrel",
-                  "STANDARD_CONCEPT": "S",
-                  "STANDARD_CONCEPT_CAPTION": "Standard",
-                  "INVALID_REASON": "V",
-                  "INVALID_REASON_CAPTION": "Valid",
-                  "CONCEPT_CODE": "32968",
-                  "DOMAIN_ID": "Drug",
-                  "VOCABULARY_ID": "RxNorm",
-                  "CONCEPT_CLASS_ID": "Ingredient"
-                },
-                "isExcluded": false,
-                "includeDescendants": true,
-                "includeMapped": false
-              }
-            ]
-          }
-        }
-      ],
-      "QualifiedLimit": {
-        "Type": "First"
-      },
-      "ExpressionLimit": {
-        "Type": "First"
-      },
-      "InclusionRules": [ ],
-      "CensoringCriteria": [ ],
-      "CollapseSettings": {
-        "CollapseType": "ERA",
-        "EraPad": 0
-      },
-      "CensorWindow": { }
+        },
+        "ExpressionLimit": {
+          "Type": "First"
+        },
+        "InclusionRules": [ ],
+        "CensoringCriteria": [ ],
+        "CollapseSettings": {
+          "CollapseType": "ERA",
+          "EraPad": 0
+        },
+        "CensorWindow": { }
+      }
     }
   ],
   "featureAnalyses": [
     {
-      "id": 1,
       "type": "PRESET",
       "name": "Demographics gender (preset)",
       "domain": "DEMOGRAPHICS",
@@ -70,7 +73,6 @@
       "design": "DemographicsGender"
     },
     {
-      "id": 2,
       "type": "CRITERIA_SET",
       "name": "Demographics gender (via criteria)",
       "domain": "DEMOGRAPHICS",
@@ -79,7 +81,6 @@
         {
           "name": "Male",
           "expression": {
-            "empty": false,
             "Type": "ALL",
             "CriteriaList": [ ],
             "DemographicCriteriaList": [
@@ -106,7 +107,6 @@
         {
           "name": "Female",
           "expression": {
-            "empty": false,
             "Type": "ALL",
             "CriteriaList": [ ],
             "DemographicCriteriaList": [
@@ -133,7 +133,6 @@
       ]
     },
     {
-      "id": 3,
       "type": "CUSTOM_FE",
       "name": "Demographics gender (raw sql)",
       "domain": "DEMOGRAPHICS",
