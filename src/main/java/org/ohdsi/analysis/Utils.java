@@ -1,4 +1,4 @@
-package org.ohdsi.standardized_analysis_api;
+package org.ohdsi.analysis;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;

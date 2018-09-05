@@ -1,4 +1,4 @@
-package org.ohdsi.standardized_analysis_api.cohortcharacterization;
+package org.ohdsi.analysis.cohortcharacterization;
 
 import java.util.Collections;
 import org.junit.Assert;
@@ -16,18 +16,18 @@ import org.ohdsi.circe.cohortdefinition.PrimaryCriteria;
 import org.ohdsi.circe.cohortdefinition.ResultLimit;
 import org.ohdsi.circe.vocabulary.Concept;
 import org.ohdsi.circe.vocabulary.ConceptSetExpression;
-import org.ohdsi.standardized_analysis_api.Utils;
-import org.ohdsi.standardized_analysis_api.Cohort;
-import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.CohortCharacterization;
-import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.CohortCharacterizationParam;
-import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.CriteriaFeature;
-import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.FeatureAnalysis;
-import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.FeatureAnalysisDomain;
-import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.FeatureAnalysisType;
-import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.StandardFeatureAnalysisDomain;
-import org.ohdsi.standardized_analysis_api.cohortcharacterization.design.StandardFeatureAnalysisType;
-import org.ohdsi.standardized_analysis_api.cohortcharacterization.result.DistributionStat;
-import org.ohdsi.standardized_analysis_api.cohortcharacterization.result.PrevalenceStat;
+import org.ohdsi.analysis.Utils;
+import org.ohdsi.analysis.Cohort;
+import org.ohdsi.analysis.cohortcharacterization.design.CohortCharacterization;
+import org.ohdsi.analysis.cohortcharacterization.design.CohortCharacterizationParam;
+import org.ohdsi.analysis.cohortcharacterization.design.CriteriaFeature;
+import org.ohdsi.analysis.cohortcharacterization.design.FeatureAnalysis;
+import org.ohdsi.analysis.cohortcharacterization.design.FeatureAnalysisDomain;
+import org.ohdsi.analysis.cohortcharacterization.design.FeatureAnalysisType;
+import org.ohdsi.analysis.cohortcharacterization.design.StandardFeatureAnalysisDomain;
+import org.ohdsi.analysis.cohortcharacterization.design.StandardFeatureAnalysisType;
+import org.ohdsi.analysis.cohortcharacterization.result.DistributionStat;
+import org.ohdsi.analysis.cohortcharacterization.result.PrevalenceStat;
 
 import java.io.IOException;
 import java.util.Arrays;

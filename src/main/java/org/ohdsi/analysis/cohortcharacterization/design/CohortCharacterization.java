@@ -1,10 +1,10 @@
-package org.ohdsi.standardized_analysis_api.cohortcharacterization.design;
+package org.ohdsi.analysis.cohortcharacterization.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.Collection;
 
-import org.ohdsi.standardized_analysis_api.Cohort;
+import org.ohdsi.analysis.Cohort;
 
 @JsonPropertyOrder({ "cohorts", "featureAnalyses", "parameters" })
 public interface CohortCharacterization {

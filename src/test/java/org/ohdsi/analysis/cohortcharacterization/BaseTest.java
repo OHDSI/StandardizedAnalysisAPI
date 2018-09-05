@@ -1,4 +1,4 @@
-package org.ohdsi.standardized_analysis_api.cohortcharacterization;
+package org.ohdsi.analysis.cohortcharacterization;
 
 import org.apache.commons.io.IOUtils;
 

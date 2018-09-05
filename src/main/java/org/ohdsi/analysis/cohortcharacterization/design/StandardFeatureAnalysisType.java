@@ -1,4 +1,4 @@
-package org.ohdsi.standardized_analysis_api.cohortcharacterization.design;
+package org.ohdsi.analysis.cohortcharacterization.design;
 
 public enum StandardFeatureAnalysisType implements FeatureAnalysisType {
     PRESET("Preset"),
