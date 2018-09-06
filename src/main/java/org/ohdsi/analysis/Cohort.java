@@ -5,5 +5,5 @@ import org.ohdsi.circe.cohortdefinition.CohortExpression;
 
 public interface Cohort extends CohortMetadata {
     @JsonGetter("expression")
-    CohortExpression getCohortExpression();
+    CohortExpression getExpression();
 }

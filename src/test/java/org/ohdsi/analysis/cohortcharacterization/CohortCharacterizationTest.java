@@ -3,6 +3,7 @@ package org.ohdsi.analysis.cohortcharacterization;
 import java.util.Collections;
 import org.junit.Assert;
 import org.junit.Test;
+import org.ohdsi.analysis.BaseTest;
 import org.ohdsi.circe.cohortdefinition.CohortExpression;
 import org.ohdsi.circe.cohortdefinition.ConceptSet;
 import org.ohdsi.circe.cohortdefinition.CorelatedCriteria;
@@ -55,7 +56,7 @@ public class CohortCharacterizationTest extends BaseTest {
                         return "clopidogrel test";
                     }
 
-                    public CohortExpression getCohortExpression() {
+                    public CohortExpression getExpression() {
 
                         CohortExpression clopidogrelExpression = new CohortExpression();
 
