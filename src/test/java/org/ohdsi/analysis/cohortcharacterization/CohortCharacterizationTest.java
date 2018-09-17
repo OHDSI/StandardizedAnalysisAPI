@@ -45,6 +45,11 @@ public class CohortCharacterizationTest extends BaseTest {
 
                 Cohort cohort = new Cohort() {
 
+                    public Integer getId() {
+
+                        return 1;
+                    }
+
                     public String getName() {
 
                         return "clopidogrel test";
@@ -282,7 +287,7 @@ public class CohortCharacterizationTest extends BaseTest {
             }
         };
 
-        Assert.assertEquals(readResource("/cohortcharacterization/CohortCharacterization.json"), Utils.serialize(cc));
+        Assert.assertEquals(readResource("/cohortcharacterization/CohortCharacterization.json"), Utils.serializePretty(cc));
     }
 
     @Test
@@ -316,7 +321,7 @@ public class CohortCharacterizationTest extends BaseTest {
             }
         };
 
-        Assert.assertEquals(readResource("/cohortcharacterization/PrevalenceStat.json"), Utils.serialize(stat));
+        Assert.assertEquals(readResource("/cohortcharacterization/PrevalenceStat.json"), Utils.serializePretty(stat));
     }
 
     @Test
@@ -390,6 +395,6 @@ public class CohortCharacterizationTest extends BaseTest {
             }
         };
 
-        Assert.assertEquals(readResource("/cohortcharacterization/DistributionStat.json"), Utils.serialize(stat));
+        Assert.assertEquals(readResource("/cohortcharacterization/DistributionStat.json"), Utils.serializePretty(stat));
     }
 }
