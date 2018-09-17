@@ -12,21 +12,29 @@ import static com.fasterxml.jackson.core.util.DefaultIndenter.SYSTEM_LINEFEED_IN
 
 public class Utils {
 
-    public static String serialize(Object object) throws JsonProcessingException {
+    private static ObjectMapper getObjectMapper() {
 
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.disable(
                 MapperFeature.AUTO_DETECT_CREATORS,
-                MapperFeature.AUTO_DETECT_GETTERS, 
+                MapperFeature.AUTO_DETECT_GETTERS,
                 MapperFeature.AUTO_DETECT_IS_GETTERS
         );
-        
+
         objectMapper.disable(
                 SerializationFeature.FAIL_ON_EMPTY_BEANS
         );
+
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+
+        return objectMapper;
+    }
+
+    public static String serializePretty(Object object) throws JsonProcessingException {
+
+        ObjectMapper objectMapper = getObjectMapper();
         
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
 
         DefaultPrettyPrinter prettyPrinter = new DefaultPrettyPrinter() {
 
@@ -40,5 +48,11 @@ public class Utils {
         prettyPrinter.indentArraysWith(SYSTEM_LINEFEED_INSTANCE);
 
         return objectMapper.writer(prettyPrinter).writeValueAsString(object);
+    }
+
+    public static String serialize(Object object) throws JsonProcessingException {
+
+        ObjectMapper objectMapper = getObjectMapper();
+        return objectMapper.writeValueAsString(object);
     }
 }
