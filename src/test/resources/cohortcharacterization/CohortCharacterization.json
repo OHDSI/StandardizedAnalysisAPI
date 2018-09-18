@@ -1,6 +1,7 @@
 {
   "cohorts": [
     {
+      "id": 1,
       "name": "clopidogrel test",
       "description": "clopidogrel test",
       "expression": {
