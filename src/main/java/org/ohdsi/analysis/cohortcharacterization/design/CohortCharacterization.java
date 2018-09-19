@@ -6,8 +6,11 @@ import java.util.Collection;
 
 import org.ohdsi.analysis.Cohort;
 
-@JsonPropertyOrder({ "cohorts", "featureAnalyses", "parameters" })
+@JsonPropertyOrder({ "name", "cohorts", "featureAnalyses", "parameters" })
 public interface CohortCharacterization {
+
+    @JsonGetter("name")
+    String getName();
 
     @JsonGetter("cohorts")
     Collection<? extends Cohort> getCohorts();
