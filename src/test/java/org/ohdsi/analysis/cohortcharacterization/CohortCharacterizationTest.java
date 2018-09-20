@@ -42,6 +42,12 @@ public class CohortCharacterizationTest extends BaseTest {
         CohortCharacterization cc = new CohortCharacterization() {
 
             @Override
+            public String getName() {
+
+                return "CC test";
+            }
+
+            @Override
             public List<Cohort> getCohorts() {
 
                 Cohort cohort = new Cohort() {
