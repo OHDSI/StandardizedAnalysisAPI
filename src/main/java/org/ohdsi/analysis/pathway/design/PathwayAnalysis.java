@@ -24,4 +24,7 @@ public interface PathwayAnalysis {
 
     @JsonGetter("maxDepth")
     Integer getMaxDepth();
+
+    @JsonGetter("allowRepeats")
+    boolean isAllowRepeats();
 }
