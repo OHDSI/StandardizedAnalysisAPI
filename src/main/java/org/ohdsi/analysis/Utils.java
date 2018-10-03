@@ -2,8 +2,10 @@ package org.ohdsi.analysis;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.core.util.Separators;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -24,6 +26,8 @@ public class Utils {
         objectMapper.disable(
                 SerializationFeature.FAIL_ON_EMPTY_BEANS
         );
+
+        objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
 
@@ -50,9 +54,24 @@ public class Utils {
         return objectMapper.writer(prettyPrinter).writeValueAsString(object);
     }
 
-    public static String serialize(Object object) throws JsonProcessingException {
+    public static String serialize(Object object) {
 
+        try {
+            ObjectMapper objectMapper = getObjectMapper();
+            return objectMapper.writeValueAsString(object);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    public static <T> T deserialize(String data, TypeReference<T> typeRef) {
         ObjectMapper objectMapper = getObjectMapper();
-        return objectMapper.writeValueAsString(object);
+        try {
+            return objectMapper.readValue(data, typeRef);
+        } catch (NullPointerException ex) {
+            return null;
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
     }
 }
