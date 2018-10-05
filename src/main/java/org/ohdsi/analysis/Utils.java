@@ -71,10 +71,11 @@ public class Utils {
 
     public static <T> T deserialize(String data, TypeReference<T> typeRef) {
         ObjectMapper objectMapper = getObjectMapper();
+        if (data == null) {
+            return null;
+        }
         try {
             return objectMapper.readValue(data, typeRef);
-        } catch (NullPointerException ex) {
-            return null;
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
@@ -82,10 +83,11 @@ public class Utils {
 
     public static <T> T deserialize(String data, JavaType typeRef) {
         ObjectMapper objectMapper = getObjectMapper();
+        if (data == null) {
+            return null;
+        }
         try {
             return objectMapper.readValue(data, typeRef);
-        } catch (NullPointerException ex) {
-            return null;
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
@@ -96,10 +98,11 @@ public class Utils {
         Objects.requireNonNull(typeFunction);
         ObjectMapper objectMapper = getObjectMapper();
         JavaType type = typeFunction.apply(objectMapper.getTypeFactory());
+        if (data == null) {
+            return null;
+        }
         try{
             return objectMapper.readValue(data, type);
-        }catch (NullPointerException ex) {
-            return null;
         }catch(Exception ex) {
             throw new RuntimeException(ex);
         }
@@ -109,10 +112,11 @@ public class Utils {
 
         Objects.requireNonNull(objectClass);
         ObjectMapper objectMapper = getObjectMapper();
+        if (data == null) {
+            return null;
+        }
         try {
             return objectMapper.readValue(data, objectClass);
-        } catch (NullPointerException ex) {
-            return null;
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
