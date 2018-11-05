@@ -3,6 +3,7 @@ package org.ohdsi.analysis;
 import static com.fasterxml.jackson.core.util.DefaultIndenter.SYSTEM_LINEFEED_INSTANCE;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
@@ -20,6 +21,10 @@ import java.util.function.Function;
 public class Utils {
 
     private static ObjectMapper getObjectMapper() {
+        return getObjectMapper(JsonInclude.Include.NON_NULL);
+    }
+    
+    private static ObjectMapper getObjectMapper(Include serializationInclusion) {
 
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.disable(
@@ -34,7 +39,7 @@ public class Utils {
 
         objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
-        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        objectMapper.setSerializationInclusion(serializationInclusion);
 
         return objectMapper;
     }
@@ -63,6 +68,23 @@ public class Utils {
 
         try {
             ObjectMapper objectMapper = getObjectMapper();
+            return Utils.serialize(object, objectMapper);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+    
+    public static String serialize(Object object, Include serializationInclusion) {
+        try {
+            ObjectMapper objectMapper = getObjectMapper(serializationInclusion);
+            return Utils.serialize(object, objectMapper);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+    
+    private static String serialize(Object object, ObjectMapper objectMapper) {
+        try {
             return objectMapper.writeValueAsString(object);
         } catch (Exception ex) {
             throw new RuntimeException(ex);
