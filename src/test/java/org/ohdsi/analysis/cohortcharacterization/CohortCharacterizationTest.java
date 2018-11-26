@@ -1,9 +1,11 @@
 package org.ohdsi.analysis.cohortcharacterization;
 
+import java.util.Collection;
 import java.util.Collections;
-import org.junit.Assert;
+import org.json.JSONException;
 import org.junit.Test;
 import org.ohdsi.analysis.BaseTest;
+import org.ohdsi.analysis.cohortcharacterization.design.CohortCharacterizationStrata;
 import org.ohdsi.circe.cohortdefinition.CohortExpression;
 import org.ohdsi.circe.cohortdefinition.ConceptSet;
 import org.ohdsi.circe.cohortdefinition.CorelatedCriteria;
@@ -33,11 +35,12 @@ import org.ohdsi.analysis.cohortcharacterization.result.PrevalenceStat;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import org.skyscreamer.jsonassert.JSONAssert;
 
 public class CohortCharacterizationTest extends BaseTest {
 
     @Test
-    public void testCohortCharacterizationSerialization() throws IOException {
+    public void testCohortCharacterizationSerialization() throws IOException, JSONException {
 
         CohortCharacterization cc = new CohortCharacterization() {
 
@@ -292,13 +295,19 @@ public class CohortCharacterizationTest extends BaseTest {
 
                 return Arrays.asList(shortTermStartDays, longTermStartDays);
             }
+
+            @Override
+            public Collection<? extends CohortCharacterizationStrata> getStratas() {
+
+                return Collections.emptyList();
+            }
         };
 
-        Assert.assertEquals(readResource("/cohortcharacterization/CohortCharacterization.json"), Utils.serializePretty(cc));
+        JSONAssert.assertEquals(readResource("/cohortcharacterization/CohortCharacterization.json"), Utils.serializePretty(cc), false);
     }
 
     @Test
-    public void testPrevalenceStatSerialization() throws IOException {
+    public void testPrevalenceStatSerialization() throws IOException, JSONException {
 
         PrevalenceStat stat = new PrevalenceStat() {
 
@@ -328,11 +337,11 @@ public class CohortCharacterizationTest extends BaseTest {
             }
         };
 
-        Assert.assertEquals(readResource("/cohortcharacterization/PrevalenceStat.json"), Utils.serializePretty(stat));
+        JSONAssert.assertEquals(readResource("/cohortcharacterization/PrevalenceStat.json"), Utils.serializePretty(stat), false);
     }
 
     @Test
-    public void testDistributionStatSerialization() throws IOException {
+    public void testDistributionStatSerialization() throws IOException, JSONException {
 
         DistributionStat stat = new DistributionStat() {
 
@@ -402,6 +411,6 @@ public class CohortCharacterizationTest extends BaseTest {
             }
         };
 
-        Assert.assertEquals(readResource("/cohortcharacterization/DistributionStat.json"), Utils.serializePretty(stat));
+        JSONAssert.assertEquals(readResource("/cohortcharacterization/DistributionStat.json"), Utils.serializePretty(stat), false);
     }
 }

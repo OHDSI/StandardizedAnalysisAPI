@@ -10,8 +10,7 @@
           "CriteriaList": [
             {
               "DrugExposure": {
-                "CodesetId": 0,
-                "DrugTypeExclude": false
+                "CodesetId": 0
               }
             }
           ],
@@ -151,5 +150,6 @@
       "name": "longTermStartDays",
       "value": -180
     }
-  ]
+  ],
+  "stratas": [ ]
 }
