@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.Collection;
 
 import org.ohdsi.analysis.Cohort;
+import org.ohdsi.circe.cohortdefinition.CriteriaGroup;
 
-@JsonPropertyOrder({ "name", "cohorts", "featureAnalyses", "parameters" })
+@JsonPropertyOrder({ "name", "cohorts", "featureAnalyses", "parameters", "stratas" })
 public interface CohortCharacterization {
 
     @JsonGetter("name")
@@ -20,4 +21,7 @@ public interface CohortCharacterization {
 
     @JsonGetter("parameters")
     Collection<? extends CohortCharacterizationParam> getParameters();
+
+    @JsonGetter("stratas")
+    Collection<? extends CohortCharacterizationStrata> getStratas();
 }
