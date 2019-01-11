@@ -13,9 +13,10 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.type.TypeFactory;
-import java.io.IOException;
 import java.util.Objects;
 import java.util.function.Function;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Utils {
 
@@ -120,5 +121,11 @@ public class Utils {
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
+    }
+    
+    public static boolean isAlphaNumeric(String str) {
+        Pattern p = Pattern.compile("^[a-zA-Z0-9.]+$");
+        Matcher m = p.matcher(str);
+        return m.find();
     }
 }
