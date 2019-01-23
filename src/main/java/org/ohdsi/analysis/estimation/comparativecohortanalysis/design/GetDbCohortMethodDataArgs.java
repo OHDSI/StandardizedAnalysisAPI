@@ -2,33 +2,75 @@ package org.ohdsi.analysis.estimation.comparativecohortanalysis.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import java.util.Date;
+import org.ohdsi.analysis.RLangClass;
 import org.ohdsi.analysis.featureextraction.design.CovariateSettings;
 
-public interface GetDbCohortMethodDataArgs {
-  @JsonGetter("studyStartDate")
-  Date getStudyStartDate();
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
+public interface GetDbCohortMethodDataArgs extends RLangClass {
 
-  @JsonGetter("studyEndDate")
-  Date getStudyEndDate();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("studyStartDate")
+    Date getStudyStartDate();
 
-  @JsonGetter("excludeDrugsFromCovariates")
-  Boolean getExcludeDrugsFromCovariates();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("studyEndDate")
+    Date getStudyEndDate();
 
-  @JsonGetter("firstExposureOnly")
-  Boolean getFirstExposureOnly();
-  
-  @JsonGetter("removeDuplicateSubjects")
-  RemoveDuplicateSubjectsEnum getRemoveDuplicateSubjects();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("excludeDrugsFromCovariates")
+    Boolean getExcludeDrugsFromCovariates();
 
-  @JsonGetter("restrictToCommonPeriod")
-  Boolean getRestrictToCommonPeriod();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("firstExposureOnly")
+    Boolean getFirstExposureOnly();
 
-  @JsonGetter("washoutPeriod")
-  Integer getWashoutPeriod();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("removeDuplicateSubjects")
+    RemoveDuplicateSubjectsEnum getRemoveDuplicateSubjects();
 
-  @JsonGetter("maxCohortSize")
-  Integer getMaxCohortSize();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("restrictToCommonPeriod")
+    Boolean getRestrictToCommonPeriod();
 
-  @JsonGetter("covariateSettings")
-  CovariateSettings getCovariateSettings();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("washoutPeriod")
+    Integer getWashoutPeriod();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("maxCohortSize")
+    Integer getMaxCohortSize();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("covariateSettings")
+    CovariateSettings getCovariateSettings();
 }

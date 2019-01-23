@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.ohdsi.analysis.estimation.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
@@ -10,12 +5,21 @@ import org.ohdsi.analysis.RLangClass;
 
 /**
  *
- * @author asena5
+ * @author Anthony Sena <https://github.com/anthonysena>
  */
 public interface Analysis extends RLangClass {
+
+    /**
+     *
+     * @return
+     */
     @JsonGetter("analysisId")
     Integer getAnalysisId();
-    
+
+    /**
+     *
+     * @return
+     */
     @JsonGetter("description")
     String getDescription();
 }

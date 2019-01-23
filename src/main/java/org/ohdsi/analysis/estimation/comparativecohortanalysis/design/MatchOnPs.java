@@ -1,14 +1,32 @@
 package org.ohdsi.analysis.estimation.comparativecohortanalysis.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import org.ohdsi.analysis.RLangClass;
 
-public interface MatchOnPs {
-  @JsonGetter("caliper")
-  Float getCaliper();
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
+public interface MatchOnPs extends RLangClass {
 
-  @JsonGetter("caliperScale")
-  CaliperScaleEnum getCaliperScale();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("caliper")
+    Float getCaliper();
 
-  @JsonGetter("maxRatio")
-  Integer getMaxRatio();    
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("caliperScale")
+    CaliperScaleEnum getCaliperScale();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("maxRatio")
+    Integer getMaxRatio();
 }

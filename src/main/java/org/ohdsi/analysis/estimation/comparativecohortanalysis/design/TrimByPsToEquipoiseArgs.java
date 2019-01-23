@@ -2,8 +2,18 @@ package org.ohdsi.analysis.estimation.comparativecohortanalysis.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import java.util.Collection;
+import org.ohdsi.analysis.RLangClass;
 
-public interface TrimByPsToEquipoiseArgs {
-  @JsonGetter("bounds")
-  Collection<Float> getBounds();
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
+public interface TrimByPsToEquipoiseArgs extends RLangClass {
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("bounds")
+    Collection<Float> getBounds();
 }

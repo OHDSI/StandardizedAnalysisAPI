@@ -2,34 +2,76 @@ package org.ohdsi.analysis.estimation.comparativecohortanalysis.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import java.util.Collection;
+import org.ohdsi.analysis.RLangClass;
 import org.ohdsi.analysis.cyclops.design.Control;
 import org.ohdsi.analysis.cyclops.design.Prior;
 
-public interface FitOutcomeModelArgs {
-  @JsonGetter("modelType")
-  OutcomeModelTypeEnum getModelType();
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
+public interface FitOutcomeModelArgs extends RLangClass {
 
-  @JsonGetter("stratified")
-  Boolean getStratified();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("modelType")
+    OutcomeModelTypeEnum getModelType();
 
-  @JsonGetter("useCovariates")
-  Boolean getUseCovariates();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("stratified")
+    Boolean getStratified();
 
-  @JsonGetter("inversePtWeighting")
-  Boolean getInversePtWeighting();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("useCovariates")
+    Boolean getUseCovariates();
 
-  @JsonGetter("interactionCovariateIds")
-  Collection<Integer> getInteractionCovariateIds();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("inversePtWeighting")
+    Boolean getInversePtWeighting();
 
-  @JsonGetter("excludeCovariateIds")
-  Collection<Integer> getExcludeCovariateIds();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("interactionCovariateIds")
+    Collection<Integer> getInteractionCovariateIds();
 
-  @JsonGetter("includeCovariateIds")
-  Collection<Integer> getIncludeCovariateIds();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("excludeCovariateIds")
+    Collection<Integer> getExcludeCovariateIds();
 
-  @JsonGetter("prior")
-  Prior getPrior();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("includeCovariateIds")
+    Collection<Integer> getIncludeCovariateIds();
 
-  @JsonGetter("control")
-  Control getControl();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("prior")
+    Prior getPrior();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("control")
+    Control getControl();
 }

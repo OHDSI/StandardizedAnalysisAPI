@@ -3,13 +3,30 @@ package org.ohdsi.analysis.estimation.design;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import java.util.List;
 
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
 public interface NegativeControlOutcomeCohortExpression {
-  @JsonGetter("occurrenceType")
-  String getOccurrenceType();
 
-  @JsonGetter("detectOnDescendants")
-  Boolean getDetectOnDescendants();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("occurrenceType")
+    String getOccurrenceType();
 
-  @JsonGetter("domains")
-  List<String> getDomains();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("detectOnDescendants")
+    Boolean getDetectOnDescendants();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("domains")
+    List<String> getDomains();
 }

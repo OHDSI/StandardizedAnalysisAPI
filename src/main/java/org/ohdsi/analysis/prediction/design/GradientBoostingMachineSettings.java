@@ -1,22 +1,49 @@
 package org.ohdsi.analysis.prediction.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.math.BigDecimal;
 import java.util.Collection;
 
-public interface GradientBoostingMachineSettings extends SeedSettings {
-  @JsonGetter("ntrees")
-  Collection<BigDecimal> getNtrees();
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
+@JsonTypeName(ModelSettingsConst.GRADIENT_BOOSTING_MACHINE)
+public interface GradientBoostingMachineSettings extends ModelSettings, SeedSettings {
 
-  @JsonGetter("nthread")
-  Integer getNthread();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("nTrees")
+    Collection<Integer> getNTrees();
 
-  @JsonGetter("maxDepth")
-  Collection<BigDecimal> getMaxDepth();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("nThread")
+    Integer getNThread();
 
-  @JsonGetter("minRows")
-  Integer getMinRows();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("maxDepth")
+    Collection<Integer> getMaxDepth();
 
-  @JsonGetter("learnRate")
-  Collection<Float> getLearnRate();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("minRows")
+    Collection<Integer> getMinRows();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("learnRate")
+    Collection<BigDecimal> getLearnRate();
 }

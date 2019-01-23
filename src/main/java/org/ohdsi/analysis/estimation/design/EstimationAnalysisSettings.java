@@ -1,21 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.ohdsi.analysis.estimation.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
  *
- * @author asena5
+ * @author Anthony Sena <https://github.com/anthonysena>
  */
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "estimationType")
 public interface EstimationAnalysisSettings {
-    
+
+    /**
+     *
+     * @return
+     */
     @JsonGetter("estimationType")
     EstimationTypeEnum getEstimationType();
-    
+
+    /**
+     *
+     * @param <T>
+     * @return
+     */
     @JsonGetter("analysisSpecification")
-    Object getAnalysisSpecification();
+    <T extends Settings> T getAnalysisSpecification();
 }

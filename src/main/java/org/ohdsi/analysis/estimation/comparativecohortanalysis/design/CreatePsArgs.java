@@ -2,28 +2,62 @@ package org.ohdsi.analysis.estimation.comparativecohortanalysis.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import java.util.Collection;
+import org.ohdsi.analysis.RLangClass;
 import org.ohdsi.analysis.cyclops.design.Control;
 import org.ohdsi.analysis.cyclops.design.Prior;
 
-public interface CreatePsArgs {
-  @JsonGetter("excludeCovariateIds")
-  Collection<Integer> getExcludeCovariateIds();
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
+public interface CreatePsArgs extends RLangClass {
 
-  @JsonGetter("includeCovariateIds")
-  Collection<Integer> getIncludeCovariateIds();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("excludeCovariateIds")
+    Collection<Integer> getExcludeCovariateIds();
 
-  @JsonGetter("maxCohortSizeForFitting")
-  Integer getMaxCohortSizeForFitting();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("includeCovariateIds")
+    Collection<Integer> getIncludeCovariateIds();
 
-  @JsonGetter("errorOnHighCorrelation")
-  Boolean getErrorOnHighCorrelation();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("maxCohortSizeForFitting")
+    Integer getMaxCohortSizeForFitting();
 
-  @JsonGetter("stopOnError")
-  Boolean getStopOnError();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("errorOnHighCorrelation")
+    Boolean getErrorOnHighCorrelation();
 
-  @JsonGetter("prior")
-  Prior getPrior();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("stopOnError")
+    Boolean getStopOnError();
 
-  @JsonGetter("control")
-  Control getControl();    
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("prior")
+    Prior getPrior();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("control")
+    Control getControl();
 }

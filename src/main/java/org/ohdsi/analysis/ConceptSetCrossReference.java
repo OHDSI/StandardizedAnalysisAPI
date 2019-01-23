@@ -3,15 +3,32 @@ package org.ohdsi.analysis;
 import com.fasterxml.jackson.annotation.JsonGetter;
 
 public interface ConceptSetCrossReference {
-  @JsonGetter("conceptSetId")
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("conceptSetId")
   Integer getConceptSetId();
 
-  @JsonGetter("targetName")
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("targetName")
   String getTargetName();
 
-  @JsonGetter("targetIndex")
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("targetIndex")
   Integer getTargetIndex();
 
-  @JsonGetter("propertyName")
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("propertyName")
   String getPropertyName();
 }

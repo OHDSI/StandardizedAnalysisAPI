@@ -21,6 +21,10 @@ import java.util.regex.Pattern;
 public class Utils {
 
     private static ObjectMapper getObjectMapper() {
+        return getObjectMapper(false);
+    }
+    
+    private static ObjectMapper getObjectMapper(Boolean includeNulls) {
 
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.disable(
@@ -35,14 +39,20 @@ public class Utils {
 
         objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
-        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        if (!includeNulls) {
+            objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        }
 
         return objectMapper;
     }
-
+    
     public static String serializePretty(Object object) throws JsonProcessingException {
+        return serializePretty(object, false);
+    }
+    
+    public static String serializePretty(Object object, Boolean includeNulls) throws JsonProcessingException {
 
-        ObjectMapper objectMapper = getObjectMapper();
+        ObjectMapper objectMapper = getObjectMapper(includeNulls);
         
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
@@ -57,13 +67,16 @@ public class Utils {
 
         prettyPrinter.indentArraysWith(SYSTEM_LINEFEED_INSTANCE);
 
-        return objectMapper.writer(prettyPrinter).writeValueAsString(object);
+        return objectMapper.writer(prettyPrinter).writeValueAsString(object);        
     }
 
     public static String serialize(Object object) {
-
+        return serialize(object, false);
+    }
+    
+    public static String serialize(Object object, Boolean includeNonNulls) {
         try {
-            ObjectMapper objectMapper = getObjectMapper();
+            ObjectMapper objectMapper = getObjectMapper(includeNonNulls);
             return objectMapper.writeValueAsString(object);
         } catch (Exception ex) {
             throw new RuntimeException(ex);

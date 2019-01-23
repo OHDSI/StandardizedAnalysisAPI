@@ -1,0 +1,25 @@
+{
+  "id": 0,
+  "name": "clopidogrel",
+  "expression": {
+    "items": [
+      {
+        "concept": {
+          "CONCEPT_ID": 1322184,
+          "CONCEPT_NAME": "clopidogrel",
+          "STANDARD_CONCEPT": "S",
+          "STANDARD_CONCEPT_CAPTION": "Standard",
+          "INVALID_REASON": "V",
+          "INVALID_REASON_CAPTION": "Valid",
+          "CONCEPT_CODE": "32968",
+          "DOMAIN_ID": "Drug",
+          "VOCABULARY_ID": "RxNorm",
+          "CONCEPT_CLASS_ID": "Ingredient"
+        },
+        "isExcluded": false,
+        "includeDescendants": true,
+        "includeMapped": false
+      }
+    ]
+  }
+}

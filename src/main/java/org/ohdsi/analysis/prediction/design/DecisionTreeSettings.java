@@ -1,23 +1,56 @@
 package org.ohdsi.analysis.prediction.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.math.BigDecimal;
+import java.util.Collection;
 
-public interface DecisionTreeSettings extends SeedSettings {
-  @JsonGetter("maxDepth")
-  Integer getMaxDepth();
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
+@JsonTypeName(ModelSettingsConst.DECISION_TREE)
+public interface DecisionTreeSettings extends ModelSettings, SeedSettings {
 
-  @JsonGetter("minSampleSplit")
-  Integer getMinSampleSplit();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("maxDepth")
+    Collection<Integer> getMaxDepth();
 
-  @JsonGetter("minSampleLeaf")
-  Integer getMinSampleLeaf();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("minSamplesSplit")
+    Collection<Integer> getMinSamplesSplit();
 
-  @JsonGetter("minImpurityDecrease")
-  Float getMinImpurityDecrease();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("minSamplesLeaf")
+    Collection<Integer> getMinSamplesLeaf();
 
-  @JsonGetter("classWeight")
-  String getClassWeight();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("minImpurityDecrease")
+    Collection<BigDecimal> getMinImpurityDecrease();
 
-  @JsonGetter("plot")
-  Boolean getPlot();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("classWeight")
+    Collection<ClassWeightEnum> getClassWeight();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("plot")
+    Boolean getPlot();
 }

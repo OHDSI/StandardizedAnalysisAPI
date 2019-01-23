@@ -2,19 +2,44 @@ package org.ohdsi.analysis.estimation.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
 public interface NegativeControl {
-  @JsonGetter("targetId")
-  Long getTargetId();
 
-  @JsonGetter("comparatorId")
-  Long getComparatorId();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("targetId")
+    Long getTargetId();
 
-  @JsonGetter("outcomeId")
-  Long getOutcomeId();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("comparatorId")
+    Long getComparatorId();
 
-  @JsonGetter("outcomeName")
-  String getOutcomeName();
-  
-  @JsonGetter("type")
-  NegativeControlTypeEnum getType();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("outcomeId")
+    Long getOutcomeId();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("outcomeName")
+    String getOutcomeName();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("type")
+    NegativeControlTypeEnum getType();
 }

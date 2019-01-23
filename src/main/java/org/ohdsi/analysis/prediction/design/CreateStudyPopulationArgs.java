@@ -3,40 +3,93 @@ package org.ohdsi.analysis.prediction.design;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import org.ohdsi.analysis.RLangClass;
 
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
 public interface CreateStudyPopulationArgs extends RLangClass {
-  @JsonGetter("binary")
-  Boolean getBinary();
 
-  @JsonGetter("includeAllOutcomes")
-  Boolean getIncludeAllOutcomes();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("binary")
+    Boolean getBinary();
 
-  @JsonGetter("firstExposureOnly")
-  Boolean getFirstExposureOnly();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("includeAllOutcomes")
+    Boolean getIncludeAllOutcomes();
 
-  @JsonGetter("washoutPeriod")
-  Integer getWashoutPeriod();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("firstExposureOnly")
+    Boolean getFirstExposureOnly();
 
-  @JsonGetter("removeSubjectsWithPriorOutcome")
-  Boolean getRemoveSubjectsWithPriorOutcome();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("washoutPeriod")
+    Integer getWashoutPeriod();
 
-  @JsonGetter("priorOutcomeLookback")
-  Integer getPriorOutcomeLookback();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("removeSubjectsWithPriorOutcome")
+    Boolean getRemoveSubjectsWithPriorOutcome();
 
-  @JsonGetter("requireTimeAtRisk")
-  Boolean getRequireTimeAtRisk();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("priorOutcomeLookback")
+    Integer getPriorOutcomeLookback();
 
-  @JsonGetter("minTimeAtRisk")
-  Integer getMinTimeAtRisk();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("requireTimeAtRisk")
+    Boolean getRequireTimeAtRisk();
 
-  @JsonGetter("riskWindowStart")
-  Integer getRiskWindowStart();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("minTimeAtRisk")
+    Integer getMinTimeAtRisk();
 
-  @JsonGetter("addExposureDaysToStart")
-  Boolean getAddExposureDaysToStart();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("riskWindowStart")
+    Integer getRiskWindowStart();
 
-  @JsonGetter("riskWindowEnd")
-  Integer getRiskWindowEnd();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("addExposureDaysToStart")
+    Boolean getAddExposureDaysToStart();
 
-  @JsonGetter("addExposureDaysToEnd")
-  Boolean getAddExposureDaysToEnd();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("riskWindowEnd")
+    Integer getRiskWindowEnd();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("addExposureDaysToEnd")
+    Boolean getAddExposureDaysToEnd();
 }

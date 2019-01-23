@@ -1,19 +1,41 @@
 package org.ohdsi.analysis.prediction.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
-import java.math.BigDecimal;
 import java.util.Collection;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
-public interface RandomForestSettings extends SeedSettings {
-  @JsonGetter("mtries")
-  Integer getMtries();
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
+@JsonTypeName(ModelSettingsConst.RANDOM_FOREST)
+public interface RandomForestSettings extends ModelSettings, SeedSettings {
 
-  @JsonGetter("ntrees")
-  Integer getNtrees();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("mtries")
+    Collection<Integer> getMtries();
 
-  @JsonGetter("maxDepth")
-  Collection<BigDecimal> getMaxDepth();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("ntrees")
+    Collection<Integer> getNtrees();
 
-  @JsonGetter("varImp")
-  Boolean getVarImp();    
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("maxDepth")
+    Collection<Integer> getMaxDepth();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("varImp")
+    Collection<Boolean> getVarImp();
 }

@@ -2,22 +2,51 @@ package org.ohdsi.analysis.prediction.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
 public interface RunPlpArgs {
-  @JsonGetter("minCovariateFraction")
-  Float getMinCovariateFraction();
 
-  @JsonGetter("normalizeData")
-  Boolean getNormalizeData();
-  
-  @JsonGetter("testSplit")
-  TestSplitEnum getTestSplit();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("minCovariateFraction")
+    Float getMinCovariateFraction();
 
-  @JsonGetter("testFraction")
-  Float getTestFraction();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("normalizeData")
+    Boolean getNormalizeData();
 
-  @JsonGetter("splitSeed")
-  Float getSplitSeed();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("testSplit")
+    TestSplitEnum getTestSplit();
 
-  @JsonGetter("nfold")
-  Integer getNfold();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("testFraction")
+    Float getTestFraction();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("splitSeed")
+    Float getSplitSeed();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("nfold")
+    Integer getNfold();
 }

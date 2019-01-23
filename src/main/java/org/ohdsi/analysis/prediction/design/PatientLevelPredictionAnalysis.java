@@ -1,75 +1,170 @@
 package org.ohdsi.analysis.prediction.design;
 
+import org.ohdsi.analysis.hydra.design.SkeletonTypeEnum;
 import org.ohdsi.analysis.ConceptSetCrossReference;
 import org.ohdsi.analysis.featureextraction.design.CovariateSettings;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import java.math.BigDecimal;
 import java.util.Collection;
+import org.ohdsi.analysis.Cohort;
 
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
 public interface PatientLevelPredictionAnalysis {
-  @JsonGetter("id")
-  Integer getId();
 
-  @JsonGetter("name")
-  String getName();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("id")
+    Integer getId();
 
-  @JsonGetter("description")
-  String getDescription();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("name")
+    String getName();
 
-  @JsonGetter("version")
-  String getVersion();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("description")
+    String getDescription();
 
-  @JsonGetter("organizationName")
-  String getOrganizationName();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("version")
+    String getVersion();
 
-  @JsonGetter("packageName")
-  String getPackageName();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("organizationName")
+    String getOrganizationName();
 
-  @JsonGetter("skeletonType")
-  SkeletonTypeEnum getSkeletonType();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("packageName")
+    String getPackageName();
 
-  @JsonGetter("skeletonVersion")
-  String getSkeletonVersion();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("skeletonType")
+    SkeletonTypeEnum getSkeletonType();
 
-  @JsonGetter("createdBy")
-  String getCreatedBy();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("skeletonVersion")
+    String getSkeletonVersion();
 
-  @JsonGetter("createdDate")
-  String getCreatedDate();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("createdBy")
+    String getCreatedBy();
 
-  @JsonGetter("modifiedBy")
-  String getModifiedBy();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("createdDate")
+    String getCreatedDate();
 
-  @JsonGetter("modifiedDate")
-  String getModifiedDate();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("modifiedBy")
+    String getModifiedBy();
 
-  @JsonGetter("cohortDefinitions")
-  Collection<? extends Object> getCohortDefinitions();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("modifiedDate")
+    String getModifiedDate();
 
-  @JsonGetter("conceptSets")
-  Collection<? extends Object> getConceptSets();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("cohortDefinitions")
+    Collection<? extends Cohort> getCohortDefinitions();
 
-  @JsonGetter("conceptSetCrossReference")
-  Collection<? extends ConceptSetCrossReference> getConceptSetCrossReference();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("conceptSets")
+    Collection<? extends Object> getConceptSets();
 
-  @JsonGetter("targetIds")
-  Collection<BigDecimal> getTargetIds();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("conceptSetCrossReference")
+    Collection<? extends ConceptSetCrossReference> getConceptSetCrossReference();
 
-  @JsonGetter("outcomeIds")
-  Collection<BigDecimal> getOutcomeIds();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("targetIds")
+    Collection<BigDecimal> getTargetIds();
 
-  @JsonGetter("covariateSettings")
-  Collection<? extends CovariateSettings> getCovariateSettings();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("outcomeIds")
+    Collection<BigDecimal> getOutcomeIds();
 
-  @JsonGetter("populationSettings")
-  Collection<? extends CreateStudyPopulationArgs> getPopulationSettings();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("covariateSettings")
+    Collection<? extends CovariateSettings> getCovariateSettings();
 
-  @JsonGetter("modelSettings")
-  Collection<? extends Object> getModelSettings();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("populationSettings")
+    Collection<? extends CreateStudyPopulationArgs> getPopulationSettings();
 
-  @JsonGetter("getPlpDataArgs")
-  GetDbPLPDataArgs getGetPlpDataArgs();
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("modelSettings")
+    Collection<? extends ModelSettings> getModelSettings();
 
-  @JsonGetter("runPlpArgs")
-  RunPlpArgs getRunPlpArgs();    
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("getPlpDataArgs")
+    GetDbPLPDataArgs getPlpDataArgs();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("runPlpArgs")
+    RunPlpArgs getRunPlpArgs();
 }

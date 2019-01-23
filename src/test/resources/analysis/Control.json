@@ -1,0 +1,26 @@
+{
+    "control": {
+        "maxIterations": 1000,
+        "tolerance": 0.000001,
+        "convergenceType": "gradient",
+        "cvType": "auto",
+        "fold": 10,
+        "lowerLimit": 0.01,
+        "upperLimit": 20,
+        "gridSteps": 10,
+        "cvRepetitions": 10,
+        "minCVData": 100,
+        "noiseLevel": "silent",
+        "seed": null,
+        "resetCoefficients": false,
+        "startingVariance": -1,
+        "useKKTSwindle": false,
+        "tuneSwindle": 10,
+        "selectorType": "auto",
+        "initialBound": 2,
+        "maxBoundCount": 5,
+        "autoSearch": true,
+        "algorithm": "ccd",
+        "attr_class": "cyclopsControl"
+    }
+}

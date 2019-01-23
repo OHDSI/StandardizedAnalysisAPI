@@ -1,11 +1,25 @@
 package org.ohdsi.analysis.estimation.comparativecohortanalysis.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import org.ohdsi.analysis.RLangClass;
 
-public interface StratifyByPs {
-  @JsonGetter("numberOfStrata")
-  Integer getNumberOfStrata();
-  
-  @JsonGetter("baseSelection")
-  BaseSelectionEnum getBaseSelection();
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
+public interface StratifyByPs extends RLangClass {
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("numberOfStrata")
+    Integer getNumberOfStrata();
+
+    /**
+     *
+     * @return
+     */
+    @JsonGetter("baseSelection")
+    BaseSelectionEnum getBaseSelection();
 }

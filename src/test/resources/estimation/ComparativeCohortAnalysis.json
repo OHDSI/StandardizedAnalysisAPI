@@ -1,0 +1,733 @@
+{
+	"id": 1,
+	"name": "Test",
+	"version": "Test",
+	"organizationName": "OHDSI",
+	"packageName": "MyPackageNameGoesHere",
+	"skeletonType": "ComparativeEffectStudy",
+	"skeletonVersion": "v0.0.1",
+        "cohortDefinitions": [{
+          "id": 1,
+          "name": "clopidogrel test",
+          "description": "clopidogrel test",
+          "expression": {
+            "PrimaryCriteria": {
+              "CriteriaList": [
+                {
+                  "DrugExposure": {
+                    "CodesetId": 0
+                  }
+                }
+              ],
+              "ObservationWindow": {
+                "PriorDays": 0,
+                "PostDays": 0
+              },
+              "PrimaryCriteriaLimit": {
+                "Type": "First"
+              }
+            },
+            "ConceptSets": [
+              {
+                "id": 0,
+                "name": "clopidogrel",
+                "expression": {
+                  "items": [
+                    {
+                      "concept": {
+                        "CONCEPT_ID": 1322184,
+                        "CONCEPT_NAME": "clopidogrel",
+                        "STANDARD_CONCEPT": "S",
+                        "STANDARD_CONCEPT_CAPTION": "Standard",
+                        "INVALID_REASON": "V",
+                        "INVALID_REASON_CAPTION": "Valid",
+                        "CONCEPT_CODE": "32968",
+                        "DOMAIN_ID": "Drug",
+                        "VOCABULARY_ID": "RxNorm",
+                        "CONCEPT_CLASS_ID": "Ingredient"
+                      },
+                      "isExcluded": false,
+                      "includeDescendants": true,
+                      "includeMapped": false
+                    }
+                  ]
+                }
+              }
+            ],
+            "QualifiedLimit": {
+              "Type": "First"
+            },
+            "ExpressionLimit": {
+              "Type": "First"
+            },
+            "InclusionRules": [ ],
+            "CensoringCriteria": [ ],
+            "CollapseSettings": {
+              "CollapseType": "ERA",
+              "EraPad": 0
+            },
+            "CensorWindow": { }
+          }
+        },{
+          "id": 2,
+          "name": "clopidogrel test",
+          "description": "clopidogrel test",
+          "expression": {
+            "PrimaryCriteria": {
+              "CriteriaList": [
+                {
+                  "DrugExposure": {
+                    "CodesetId": 0
+                  }
+                }
+              ],
+              "ObservationWindow": {
+                "PriorDays": 0,
+                "PostDays": 0
+              },
+              "PrimaryCriteriaLimit": {
+                "Type": "First"
+              }
+            },
+            "ConceptSets": [
+              {
+                "id": 0,
+                "name": "clopidogrel",
+                "expression": {
+                  "items": [
+                    {
+                      "concept": {
+                        "CONCEPT_ID": 1322184,
+                        "CONCEPT_NAME": "clopidogrel",
+                        "STANDARD_CONCEPT": "S",
+                        "STANDARD_CONCEPT_CAPTION": "Standard",
+                        "INVALID_REASON": "V",
+                        "INVALID_REASON_CAPTION": "Valid",
+                        "CONCEPT_CODE": "32968",
+                        "DOMAIN_ID": "Drug",
+                        "VOCABULARY_ID": "RxNorm",
+                        "CONCEPT_CLASS_ID": "Ingredient"
+                      },
+                      "isExcluded": false,
+                      "includeDescendants": true,
+                      "includeMapped": false
+                    }
+                  ]
+                }
+              }
+            ],
+            "QualifiedLimit": {
+              "Type": "First"
+            },
+            "ExpressionLimit": {
+              "Type": "First"
+            },
+            "InclusionRules": [ ],
+            "CensoringCriteria": [ ],
+            "CollapseSettings": {
+              "CollapseType": "ERA",
+              "EraPad": 0
+            },
+            "CensorWindow": { }
+          }
+        },{
+          "id": 3,
+          "name": "clopidogrel test",
+          "description": "clopidogrel test",
+          "expression": {
+            "PrimaryCriteria": {
+              "CriteriaList": [
+                {
+                  "DrugExposure": {
+                    "CodesetId": 0
+                  }
+                }
+              ],
+              "ObservationWindow": {
+                "PriorDays": 0,
+                "PostDays": 0
+              },
+              "PrimaryCriteriaLimit": {
+                "Type": "First"
+              }
+            },
+            "ConceptSets": [
+              {
+                "id": 0,
+                "name": "clopidogrel",
+                "expression": {
+                  "items": [
+                    {
+                      "concept": {
+                        "CONCEPT_ID": 1322184,
+                        "CONCEPT_NAME": "clopidogrel",
+                        "STANDARD_CONCEPT": "S",
+                        "STANDARD_CONCEPT_CAPTION": "Standard",
+                        "INVALID_REASON": "V",
+                        "INVALID_REASON_CAPTION": "Valid",
+                        "CONCEPT_CODE": "32968",
+                        "DOMAIN_ID": "Drug",
+                        "VOCABULARY_ID": "RxNorm",
+                        "CONCEPT_CLASS_ID": "Ingredient"
+                      },
+                      "isExcluded": false,
+                      "includeDescendants": true,
+                      "includeMapped": false
+                    }
+                  ]
+                }
+              }
+            ],
+            "QualifiedLimit": {
+              "Type": "First"
+            },
+            "ExpressionLimit": {
+              "Type": "First"
+            },
+            "InclusionRules": [ ],
+            "CensoringCriteria": [ ],
+            "CollapseSettings": {
+              "CollapseType": "ERA",
+              "EraPad": 0
+            },
+            "CensorWindow": { }
+          }
+        }],
+        "conceptSets": [{
+            "id": 0,
+            "name": "clopidogrel",
+            "expression": {
+              "items": [
+                {
+                  "concept": {
+                    "CONCEPT_ID": 1322184,
+                    "CONCEPT_NAME": "clopidogrel",
+                    "STANDARD_CONCEPT": "S",
+                    "STANDARD_CONCEPT_CAPTION": "Standard",
+                    "INVALID_REASON": "V",
+                    "INVALID_REASON_CAPTION": "Valid",
+                    "CONCEPT_CODE": "32968",
+                    "DOMAIN_ID": "Drug",
+                    "VOCABULARY_ID": "RxNorm",
+                    "CONCEPT_CLASS_ID": "Ingredient"
+                  },
+                  "isExcluded": false,
+                  "includeDescendants": true,
+                  "includeMapped": false
+                }
+              ]
+            }
+        }, {
+            "id": 1,
+            "name": "negative controls",
+            "expression": {
+              "items": [
+                {
+                  "concept": {
+                      "CONCEPT_ID": 4061734,
+                      "CONCEPT_NAME": "Abscess of face",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "200751004",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                  },
+                  "isExcluded": false,
+                  "includeDescendants": false,
+                  "includeMapped": false
+                }
+              ]
+            }
+        }],
+	"conceptSetCrossReference": [{
+                "conceptSetId": 1,
+                "targetName": "negativeControlOutcomes",
+                "targetIndex": 0,
+                "propertyName": "outcomeId"
+            }, {
+                "conceptSetId": 0,
+                "targetName": "estimationAnalysisSettings.analysisSpecification.targetComparatorOutcomes",
+                "targetIndex": 0,
+                "propertyName": "excludedCovariateConceptIds"
+            }
+	],
+	"negativeControls": [{
+                "targetId": 1,
+                "comparatorId": 2,
+                "outcomeId": 4061734,
+                "outcomeName": "Abscess of face",
+                "type": "outcome"
+            }
+        ],
+	"doPositiveControlSynthesis": true,
+	"positiveControlSynthesisArgs": {
+		"modelType": "survival",
+		"minOutcomeCountForModel": 50,
+		"minOutcomeCountForInjection": 25,
+		"covariateSettings": {
+			"temporal": false,
+			"DemographicsGender": true,
+			"DemographicsAge": false,
+			"DemographicsAgeGroup": true,
+			"DemographicsRace": true,
+			"DemographicsEthnicity": true,
+			"DemographicsIndexYear": true,
+			"DemographicsIndexMonth": true,
+			"DemographicsPriorObservationTime": false,
+			"DemographicsPostObservationTime": false,
+			"DemographicsTimeInCohort": false,
+			"DemographicsIndexYearMonth": false,
+			"ConditionOccurrenceAnyTimePrior": false,
+			"ConditionOccurrenceLongTerm": false,
+			"ConditionOccurrenceMediumTerm": false,
+			"ConditionOccurrenceShortTerm": false,
+			"ConditionOccurrencePrimaryInpatientAnyTimePrior": false,
+			"ConditionOccurrencePrimaryInpatientLongTerm": false,
+			"ConditionOccurrencePrimaryInpatientMediumTerm": false,
+			"ConditionOccurrencePrimaryInpatientShortTerm": false,
+			"ConditionEraAnyTimePrior": false,
+			"ConditionEraLongTerm": false,
+			"ConditionEraMediumTerm": false,
+			"ConditionEraShortTerm": false,
+			"ConditionEraOverlapping": false,
+			"ConditionEraStartLongTerm": false,
+			"ConditionEraStartMediumTerm": false,
+			"ConditionEraStartShortTerm": false,
+			"ConditionGroupEraAnyTimePrior": false,
+			"ConditionGroupEraLongTerm": true,
+			"ConditionGroupEraMediumTerm": false,
+			"ConditionGroupEraShortTerm": true,
+			"ConditionGroupEraOverlapping": false,
+			"ConditionGroupEraStartLongTerm": false,
+			"ConditionGroupEraStartMediumTerm": false,
+			"ConditionGroupEraStartShortTerm": false,
+			"DrugExposureAnyTimePrior": false,
+			"DrugExposureLongTerm": false,
+			"DrugExposureMediumTerm": false,
+			"DrugExposureShortTerm": false,
+			"DrugEraAnyTimePrior": false,
+			"DrugEraLongTerm": false,
+			"DrugEraMediumTerm": false,
+			"DrugEraShortTerm": false,
+			"DrugEraOverlapping": false,
+			"DrugEraStartLongTerm": false,
+			"DrugEraStartMediumTerm": false,
+			"DrugEraStartShortTerm": false,
+			"DrugGroupEraAnyTimePrior": false,
+			"DrugGroupEraLongTerm": true,
+			"DrugGroupEraMediumTerm": false,
+			"DrugGroupEraShortTerm": true,
+			"DrugGroupEraOverlapping": true,
+			"DrugGroupEraStartLongTerm": false,
+			"DrugGroupEraStartMediumTerm": false,
+			"DrugGroupEraStartShortTerm": false,
+			"ProcedureOccurrenceAnyTimePrior": false,
+			"ProcedureOccurrenceLongTerm": true,
+			"ProcedureOccurrenceMediumTerm": false,
+			"ProcedureOccurrenceShortTerm": true,
+			"DeviceExposureAnyTimePrior": false,
+			"DeviceExposureLongTerm": true,
+			"DeviceExposureMediumTerm": false,
+			"DeviceExposureShortTerm": true,
+			"MeasurementAnyTimePrior": false,
+			"MeasurementLongTerm": true,
+			"MeasurementMediumTerm": false,
+			"MeasurementShortTerm": true,
+			"MeasurementValueAnyTimePrior": false,
+			"MeasurementValueLongTerm": false,
+			"MeasurementValueMediumTerm": false,
+			"MeasurementValueShortTerm": false,
+			"MeasurementRangeGroupAnyTimePrior": false,
+			"MeasurementRangeGroupLongTerm": true,
+			"MeasurementRangeGroupMediumTerm": false,
+			"MeasurementRangeGroupShortTerm": false,
+			"ObservationAnyTimePrior": false,
+			"ObservationLongTerm": true,
+			"ObservationMediumTerm": false,
+			"ObservationShortTerm": true,
+			"CharlsonIndex": true,
+			"Dcsi": true,
+			"Chads2": true,
+			"Chads2Vasc": true,
+			"DistinctConditionCountLongTerm": false,
+			"DistinctConditionCountMediumTerm": false,
+			"DistinctConditionCountShortTerm": false,
+			"DistinctIngredientCountLongTerm": false,
+			"DistinctIngredientCountMediumTerm": false,
+			"DistinctIngredientCountShortTerm": false,
+			"DistinctProcedureCountLongTerm": false,
+			"DistinctProcedureCountMediumTerm": false,
+			"DistinctProcedureCountShortTerm": false,
+			"DistinctMeasurementCountLongTerm": false,
+			"DistinctMeasurementCountMediumTerm": false,
+			"DistinctMeasurementCountShortTerm": false,
+			"DistinctObservationCountLongTerm": false,
+			"DistinctObservationCountMediumTerm": false,
+			"DistinctObservationCountShortTerm": false,
+			"VisitCountLongTerm": false,
+			"VisitCountMediumTerm": false,
+			"VisitCountShortTerm": false,
+			"VisitConceptCountLongTerm": false,
+			"VisitConceptCountMediumTerm": false,
+			"VisitConceptCountShortTerm": false,
+			"longTermStartDays": -365,
+			"mediumTermStartDays": -180,
+			"shortTermStartDays": -30,
+			"endDays": 0,
+			"includedCovariateConceptIds": [],
+			"addDescendantsToInclude": false,
+			"excludedCovariateConceptIds": [],
+			"addDescendantsToExclude": false,
+			"includedCovariateIds": [],
+			"attr_fun": "getDbDefaultCovariateData",
+			"attr_class": "covariateSettings"
+		},
+		"prior": {
+			"priorType": ["laplace"],
+			"variance": [1],
+			"exclude": ["0"],
+			"graph": null,
+			"neighborhood": null,
+			"useCrossValidation": true,
+			"forceIntercept": false,
+			"attr_class": "cyclopsPrior"
+		},
+		"control": {
+			"maxIterations": 1000,
+			"tolerance": 0.000001,
+			"convergenceType": "gradient",
+			"cvType": "auto",
+			"fold": 10,
+			"lowerLimit": 0.01,
+			"upperLimit": 20,
+			"gridSteps": 10,
+			"cvRepetitions": 10,
+			"minCVData": 100,
+			"noiseLevel": "silent",
+			"threads": 1,
+			"seed": null,
+			"resetCoefficients": false,
+			"startingVariance": -1,
+			"useKKTSwindle": false,
+			"tuneSwindle": 10,
+			"selectorType": "auto",
+			"initialBound": 2,
+			"maxBoundCount": 5,
+			"autoSearch": true,
+			"algorithm": "ccd",
+			"attr_class": "cyclopsControl"
+		},
+		"firstExposureOnly": true,
+		"washoutPeriod": 183,
+		"riskWindowStart": 0,
+		"riskWindowEnd": 30,
+		"addExposureDaysToEnd": true,
+		"firstOutcomeOnly": true,
+		"removePeopleWithPriorOutcomes": true,
+		"maxSubjectsForModel": 250000,
+		"effectSizes": [1.5, 2.0, 4.0],
+		"precision": 0.01,
+		"outputIdOffset": 10000
+	},    
+	"negativeControlOutcomeCohortDefinition": {
+		"occurrenceType": "all",
+		"detectOnDescendants": true,
+		"domains": ["condition", "procedure"]
+	},
+	"negativeControlExposureCohortDefinition": {},
+	"estimationAnalysisSettings": {
+		"estimationType": "ComparativeCohortAnalysis",
+		"analysisSpecification": {
+                        "targetComparatorOutcomes": [{
+                        "targetId": 1,
+                        "comparatorId": 2,
+                        "outcomeIds": [3],
+                        "excludedCovariateConceptIds": [],
+                        "includedCovariateConceptIds": []
+                        }],
+			"cohortMethodAnalysisList": [{
+					"analysisId": 1,
+					"description": "1-1 Matched cohort",
+					"targetType": null,
+					"comparatorType": null,
+					"getDbCohortMethodDataArgs": {
+						"studyStartDate": null,
+						"studyEndDate": null,
+						"excludeDrugsFromCovariates": false,
+						"firstExposureOnly": true,
+						"removeDuplicateSubjects": "keep first",
+						"restrictToCommonPeriod": false,
+						"washoutPeriod": 180,
+						"maxCohortSize": 0,
+						"covariateSettings": {
+							"temporal": false,
+							"DemographicsGender": true,
+							"DemographicsAge": false,
+							"DemographicsAgeGroup": true,
+							"DemographicsRace": true,
+							"DemographicsEthnicity": true,
+							"DemographicsIndexYear": true,
+							"DemographicsIndexMonth": true,
+							"DemographicsPriorObservationTime": false,
+							"DemographicsPostObservationTime": false,
+							"DemographicsTimeInCohort": false,
+							"DemographicsIndexYearMonth": false,
+							"ConditionOccurrenceAnyTimePrior": false,
+							"ConditionOccurrenceLongTerm": false,
+							"ConditionOccurrenceMediumTerm": false,
+							"ConditionOccurrenceShortTerm": false,
+							"ConditionOccurrencePrimaryInpatientAnyTimePrior": false,
+							"ConditionOccurrencePrimaryInpatientLongTerm": false,
+							"ConditionOccurrencePrimaryInpatientMediumTerm": false,
+							"ConditionOccurrencePrimaryInpatientShortTerm": false,
+							"ConditionEraAnyTimePrior": false,
+							"ConditionEraLongTerm": false,
+							"ConditionEraMediumTerm": false,
+							"ConditionEraShortTerm": false,
+							"ConditionEraOverlapping": false,
+							"ConditionEraStartLongTerm": false,
+							"ConditionEraStartMediumTerm": false,
+							"ConditionEraStartShortTerm": false,
+							"ConditionGroupEraAnyTimePrior": false,
+							"ConditionGroupEraLongTerm": true,
+							"ConditionGroupEraMediumTerm": false,
+							"ConditionGroupEraShortTerm": true,
+							"ConditionGroupEraOverlapping": false,
+							"ConditionGroupEraStartLongTerm": false,
+							"ConditionGroupEraStartMediumTerm": false,
+							"ConditionGroupEraStartShortTerm": false,
+							"DrugExposureAnyTimePrior": false,
+							"DrugExposureLongTerm": false,
+							"DrugExposureMediumTerm": false,
+							"DrugExposureShortTerm": false,
+							"DrugEraAnyTimePrior": false,
+							"DrugEraLongTerm": false,
+							"DrugEraMediumTerm": false,
+							"DrugEraShortTerm": false,
+							"DrugEraOverlapping": false,
+							"DrugEraStartLongTerm": false,
+							"DrugEraStartMediumTerm": false,
+							"DrugEraStartShortTerm": false,
+							"DrugGroupEraAnyTimePrior": false,
+							"DrugGroupEraLongTerm": true,
+							"DrugGroupEraMediumTerm": false,
+							"DrugGroupEraShortTerm": true,
+							"DrugGroupEraOverlapping": true,
+							"DrugGroupEraStartLongTerm": false,
+							"DrugGroupEraStartMediumTerm": false,
+							"DrugGroupEraStartShortTerm": false,
+							"ProcedureOccurrenceAnyTimePrior": false,
+							"ProcedureOccurrenceLongTerm": true,
+							"ProcedureOccurrenceMediumTerm": false,
+							"ProcedureOccurrenceShortTerm": true,
+							"DeviceExposureAnyTimePrior": false,
+							"DeviceExposureLongTerm": true,
+							"DeviceExposureMediumTerm": false,
+							"DeviceExposureShortTerm": true,
+							"MeasurementAnyTimePrior": false,
+							"MeasurementLongTerm": true,
+							"MeasurementMediumTerm": false,
+							"MeasurementShortTerm": true,
+							"MeasurementValueAnyTimePrior": false,
+							"MeasurementValueLongTerm": false,
+							"MeasurementValueMediumTerm": false,
+							"MeasurementValueShortTerm": false,
+							"MeasurementRangeGroupAnyTimePrior": false,
+							"MeasurementRangeGroupLongTerm": true,
+							"MeasurementRangeGroupMediumTerm": false,
+							"MeasurementRangeGroupShortTerm": false,
+							"ObservationAnyTimePrior": false,
+							"ObservationLongTerm": true,
+							"ObservationMediumTerm": false,
+							"ObservationShortTerm": true,
+							"CharlsonIndex": true,
+							"Dcsi": true,
+							"Chads2": true,
+							"Chads2Vasc": true,
+							"DistinctConditionCountLongTerm": false,
+							"DistinctConditionCountMediumTerm": false,
+							"DistinctConditionCountShortTerm": false,
+							"DistinctIngredientCountLongTerm": false,
+							"DistinctIngredientCountMediumTerm": false,
+							"DistinctIngredientCountShortTerm": false,
+							"DistinctProcedureCountLongTerm": false,
+							"DistinctProcedureCountMediumTerm": false,
+							"DistinctProcedureCountShortTerm": false,
+							"DistinctMeasurementCountLongTerm": false,
+							"DistinctMeasurementCountMediumTerm": false,
+							"DistinctMeasurementCountShortTerm": false,
+							"DistinctObservationCountLongTerm": false,
+							"DistinctObservationCountMediumTerm": false,
+							"DistinctObservationCountShortTerm": false,
+							"VisitCountLongTerm": false,
+							"VisitCountMediumTerm": false,
+							"VisitCountShortTerm": false,
+							"VisitConceptCountLongTerm": false,
+							"VisitConceptCountMediumTerm": false,
+							"VisitConceptCountShortTerm": false,
+							"longTermStartDays": -365,
+							"mediumTermStartDays": -180,
+							"shortTermStartDays": -30,
+							"endDays": 0,
+							"includedCovariateConceptIds": [],
+							"addDescendantsToInclude": false,
+							"excludedCovariateConceptIds": [],
+							"addDescendantsToExclude": false,
+							"includedCovariateIds": [],
+							"attr_fun": "getDbDefaultCovariateData",
+							"attr_class": "covariateSettings"
+						},
+						"attr_class": "args"
+					},
+					"createStudyPopArgs": {
+						"firstExposureOnly": false,
+						"restrictToCommonPeriod": false,
+						"washoutPeriod": 0,
+						"removeDuplicateSubjects": "keep all",
+						"removeSubjectsWithPriorOutcome": true,
+						"priorOutcomeLookback": 99999,
+						"minDaysAtRisk": 120,
+						"riskWindowStart": 0,
+						"addExposureDaysToStart": false,
+						"riskWindowEnd": 120,
+						"addExposureDaysToEnd": false,
+						"censorAtNewRiskWindow": false,
+						"attr_class": "args"
+					},
+					"createPs": true,
+					"createPsArgs": {
+						"excludeCovariateIds": [],
+						"includeCovariateIds": [],
+						"maxCohortSizeForFitting": 250000,
+						"errorOnHighCorrelation": true,
+						"stopOnError": true,
+						"prior": {
+							"priorType": ["laplace"],
+							"variance": [1],
+							"exclude": ["0"],
+							"graph": null,
+							"neighborhood": null,
+							"useCrossValidation": true,
+							"forceIntercept": false,
+							"attr_class": "cyclopsPrior"
+						},
+						"control": {
+							"maxIterations": 1000,
+							"tolerance": 0.000001,
+							"convergenceType": "gradient",
+							"cvType": "auto",
+							"fold": 10,
+							"lowerLimit": 0.01,
+							"upperLimit": 20,
+							"gridSteps": 10,
+							"cvRepetitions": 10,
+							"minCVData": 100,
+							"noiseLevel": "silent",
+							"seed": null,
+							"resetCoefficients": false,
+							"startingVariance": -1,
+							"useKKTSwindle": false,
+							"tuneSwindle": 10,
+							"selectorType": "auto",
+							"initialBound": 2,
+							"maxBoundCount": 5,
+							"autoSearch": true,
+							"algorithm": "ccd",
+							"attr_class": "cyclopsControl"
+						},
+						"attr_class": "args"
+					},
+					"trimByPs": true,
+					"trimByPsArgs": {
+						"trimFraction": 0.05,
+						"attr_class": "args"
+					},
+					"trimByPsToEquipoise": false,
+					"trimByPsToEquipoiseArgs": {
+						"bounds": [0.25, 0.75],
+						"attr_class": "args"
+					},
+					"matchOnPs": true,
+					"matchOnPsArgs": {
+						"caliper": 0.2,
+						"caliperScale": "standardized logit",
+						"maxRatio": 1,
+						"stratificationColumns": [],
+						"attr_class": "args"
+					},
+					"matchOnPsAndCovariates": false,
+					"matchOnPsAndCovariatesArgs": {
+						"caliper": 0.2,
+						"caliperScale": "standardized logit",
+						"maxRatio": 1,
+						"covariateIds": [],
+						"attr_class": "args"
+					},
+					"stratifyByPs": false,
+					"stratifyByPsArgs": {
+						"numberOfStrata": 5,
+						"baseSelection": "all",
+						"stratificationColumns": [],
+						"attr_class": "args"
+					},
+					"stratifyByPsAndCovariates": false,
+					"stratifyByPsAndCovariatesArgs": {
+						"numberOfStrata": 5,
+						"baseSelection": "all",
+						"covariateIds": [],
+						"attr_class": "args"
+					},
+					"fitOutcomeModel": true,
+					"fitOutcomeModelArgs": {
+						"modelType": "cox",
+						"stratified": true,
+						"useCovariates": false,
+						"inversePtWeighting": false,
+						"interactionCovariateIds": [],
+						"excludeCovariateIds": [],
+						"includeCovariateIds": [],
+						"prior": {
+							"priorType": ["laplace"],
+							"variance": [1],
+							"exclude": ["0"],
+							"graph": null,
+							"neighborhood": null,
+							"useCrossValidation": true,
+							"forceIntercept": false,
+							"attr_class": "cyclopsPrior"
+						},
+						"control": {
+							"maxIterations": 1000,
+							"tolerance": 0.000001,
+							"convergenceType": "gradient",
+							"cvType": "auto",
+							"fold": 10,
+							"lowerLimit": 0.01,
+							"upperLimit": 20,
+							"gridSteps": 10,
+							"cvRepetitions": 10,
+							"minCVData": 100,
+							"noiseLevel": "silent",
+							"seed": null,
+							"resetCoefficients": false,
+							"startingVariance": -1,
+							"useKKTSwindle": false,
+							"tuneSwindle": 10,
+							"selectorType": "auto",
+							"initialBound": 2,
+							"maxBoundCount": 5,
+							"autoSearch": true,
+							"algorithm": "ccd",
+							"attr_class": "cyclopsControl"
+						},
+						"attr_class": "args"
+					},
+					"attr_class": "cmAnalysis"
+				}
+			]
+                }
+        }
+}
