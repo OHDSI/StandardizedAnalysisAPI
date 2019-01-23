@@ -19,5 +19,5 @@ public interface FeatureAnalysis {
     String getDescr();
 
     @JsonGetter("design")
-    <T extends Object> T getDesign();
+    Object getDesign();
 }
