@@ -74,9 +74,9 @@ public class Utils {
         return serialize(object, false);
     }
     
-    public static String serialize(Object object, Boolean includeNonNulls) {
+    public static String serialize(Object object, Boolean includeNulls) {
         try {
-            ObjectMapper objectMapper = getObjectMapper(includeNonNulls);
+            ObjectMapper objectMapper = getObjectMapper(includeNulls);
             return objectMapper.writeValueAsString(object);
         } catch (Exception ex) {
             throw new RuntimeException(ex);
