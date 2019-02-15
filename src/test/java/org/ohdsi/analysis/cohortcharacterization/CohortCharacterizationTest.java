@@ -52,65 +52,7 @@ public class CohortCharacterizationTest extends BaseTest {
 
             @Override
             public List<Cohort> getCohorts() {
-
-                Cohort cohort = new Cohort() {
-
-                    public Integer getId() {
-
-                        return 1;
-                    }
-
-                    public String getName() {
-
-                        return "clopidogrel test";
-                    }
-
-                    public String getDescription() {
-
-                        return "clopidogrel test";
-                    }
-
-                    public CohortExpression getExpression() {
-
-                        CohortExpression clopidogrelExpression = new CohortExpression();
-
-                        ConceptSetExpression.ConceptSetItem clopidogrelConceptSetItem = new ConceptSetExpression.ConceptSetItem();
-                        clopidogrelConceptSetItem.includeDescendants = true;
-
-                        clopidogrelConceptSetItem.concept = new Concept();
-                        clopidogrelConceptSetItem.concept.conceptId = 1322184L;
-                        clopidogrelConceptSetItem.concept.conceptName = "clopidogrel";
-                        clopidogrelConceptSetItem.concept.standardConcept = "S";
-                        clopidogrelConceptSetItem.concept.invalidReason = "V";
-                        clopidogrelConceptSetItem.concept.conceptCode = "32968";
-                        clopidogrelConceptSetItem.concept.domainId = "Drug";
-                        clopidogrelConceptSetItem.concept.vocabularyId = "RxNorm";
-                        clopidogrelConceptSetItem.concept.conceptClassId = "Ingredient";
-
-                        ConceptSet clopidogrelConceptSet = new ConceptSet();
-                        clopidogrelConceptSet.id = 0;
-                        clopidogrelConceptSet.name = "clopidogrel";
-                        clopidogrelConceptSet.expression = new ConceptSetExpression();
-                        clopidogrelConceptSet.expression.items = new ConceptSetExpression.ConceptSetItem[] { clopidogrelConceptSetItem };
-
-                        DrugExposure de = new DrugExposure();
-                        de.codesetId = 0;
-
-                        PrimaryCriteria primaryCriteria = new PrimaryCriteria();
-                        primaryCriteria.primaryLimit = new ResultLimit();
-                        primaryCriteria.observationWindow = new ObservationFilter();
-                        primaryCriteria.criteriaList = new Criteria[] { de };
-
-                        clopidogrelExpression.conceptSets = new ConceptSet[] { clopidogrelConceptSet };
-                        clopidogrelExpression.censoringCriteria = new Criteria[] {};
-                        clopidogrelExpression.censorWindow = new Period();
-                        clopidogrelExpression.primaryCriteria = primaryCriteria;
-                        
-                        return clopidogrelExpression;
-                    }
-                };
-
-                return Collections.singletonList(cohort);
+                return Collections.singletonList(createCohort());
             }
 
             @Override

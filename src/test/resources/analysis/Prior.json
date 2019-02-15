@@ -1,0 +1,12 @@
+{
+"prior": {
+        "priorType": ["laplace"],
+        "variance": [1],
+        "exclude": ["0"],
+        "graph": null,
+        "neighborhood": null,
+        "useCrossValidation": true,
+        "forceIntercept": false,
+        "attr_class": "cyclopsPrior"
+    }
+}

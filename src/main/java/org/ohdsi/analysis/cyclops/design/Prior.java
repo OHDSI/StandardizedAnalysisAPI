@@ -1,0 +1,81 @@
+package org.ohdsi.analysis.cyclops.design;
+
+import com.fasterxml.jackson.annotation.JsonGetter;
+import java.math.BigDecimal;
+import java.util.Collection;
+import org.ohdsi.analysis.RLangClass;
+
+/**
+ *
+ * @author Anthony Sena <https://github.com/anthonysena>
+ */
+public interface Prior extends RLangClass {
+
+    /**
+     * A vector of numbers or covariateId names to exclude from prior
+     *
+     * @return exclude
+     *
+     */
+    @JsonGetter(value = "exclude")
+    Collection<String> getExclude();
+
+    /**
+     * Child-to-parent mapping for a hierarchical prior
+     *
+     * @return graph
+     *
+     */
+    @JsonGetter(value = "graph")
+    String getGraph();
+
+    /**
+     * A list of first-order neighborhoods for a partially fused prior
+     *
+     * @return neighborhood
+     *
+     */
+    @JsonGetter(value = "neighborhood")
+    Collection<String> getNeighborhood();
+
+    /**
+     * Perform cross-validation to determine prior variance.
+     *
+     * @return useCrossValidation
+     *
+     */
+    @JsonGetter(value = "useCrossValidation")
+    Boolean getUseCrossValidation();
+
+    /**
+     * Force intercept coefficient into prior
+     *
+     * @return forceIntercept
+     *
+     */
+    @JsonGetter(value = "forceIntercept")
+    Boolean getForceIntercept();
+
+    /**
+     * Specifies prior distribution. We specify all priors in terms of their
+     * variance parameters. Similar fitting tools for regularized regression
+     * often parameterize the Laplace distribution in terms of a rate
+     * \&quot;lambda\&quot; per observation. See \&quot;glmnet\&quot;, for
+     * example. variance &#x3D; 2 * / (nobs * lambda)^2 or lambda &#x3D; sqrt(2
+     * / variance) / nobs
+     *
+     * @return priorType
+     *
+     */
+    @JsonGetter(value = "priorType")
+    Collection<PriorTypeEnum> getPriorType();
+
+    /**
+     * prior distribution variance
+     *
+     * @return variance
+     *
+     */
+    @JsonGetter(value = "variance")
+    Collection<BigDecimal> getVariance();
+}
