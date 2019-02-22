@@ -1,8 +1,8 @@
 {
 "prior": {
-        "priorType": ["laplace"],
+        "priorType": "laplace",
         "variance": [1],
-        "exclude": ["0"],
+        "exclude": [0],
         "graph": null,
         "neighborhood": null,
         "useCrossValidation": true,
