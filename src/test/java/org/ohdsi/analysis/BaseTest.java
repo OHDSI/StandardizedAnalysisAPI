@@ -754,9 +754,9 @@ public class BaseTest {
     protected Prior createPrior() {
         return new Prior() {
             @Override
-            public Collection<String> getExclude() {
-                Collection<String> returnVal = new ArrayList<>();
-                returnVal.add("0");
+            public Collection<Integer> getExclude() {
+                Collection<Integer> returnVal = new ArrayList<>();
+                returnVal.add(0);
                 return returnVal;
             }
 
@@ -781,10 +781,8 @@ public class BaseTest {
             }
 
             @Override
-            public Collection<PriorTypeEnum> getPriorType() {
-                Collection<PriorTypeEnum> returnVal = new ArrayList<>();
-                returnVal.add(PriorTypeEnum.LAPLACE);
-                return returnVal;
+            public PriorTypeEnum getPriorType() {
+                return PriorTypeEnum.LAPLACE;
             }
 
             @Override

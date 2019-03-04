@@ -18,7 +18,7 @@ public interface Prior extends RLangClass {
      *
      */
     @JsonGetter(value = "exclude")
-    Collection<String> getExclude();
+    Collection<Integer> getExclude();
 
     /**
      * Child-to-parent mapping for a hierarchical prior
@@ -68,7 +68,7 @@ public interface Prior extends RLangClass {
      *
      */
     @JsonGetter(value = "priorType")
-    Collection<PriorTypeEnum> getPriorType();
+    PriorTypeEnum getPriorType();
 
     /**
      * prior distribution variance

@@ -386,9 +386,9 @@
 			"attr_class": "covariateSettings"
 		},
 		"prior": {
-			"priorType": ["laplace"],
+			"priorType": "laplace",
 			"variance": [1],
-			"exclude": ["0"],
+			"exclude": [0],
 			"graph": null,
 			"neighborhood": null,
 			"useCrossValidation": true,
@@ -605,9 +605,9 @@
 						"errorOnHighCorrelation": true,
 						"stopOnError": true,
 						"prior": {
-							"priorType": ["laplace"],
+							"priorType": "laplace",
 							"variance": [1],
-							"exclude": ["0"],
+							"exclude": [0],
 							"graph": null,
 							"neighborhood": null,
 							"useCrossValidation": true,
@@ -690,9 +690,9 @@
 						"excludeCovariateIds": [],
 						"includeCovariateIds": [],
 						"prior": {
-							"priorType": ["laplace"],
+							"priorType": "laplace",
 							"variance": [1],
-							"exclude": ["0"],
+							"exclude": [0],
 							"graph": null,
 							"neighborhood": null,
 							"useCrossValidation": true,
