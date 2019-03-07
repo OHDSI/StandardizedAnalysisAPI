@@ -5,6 +5,7 @@ import org.apache.commons.io.IOUtils;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import org.ohdsi.analysis.cyclops.design.AlgorithmTypeEnum;
@@ -32,6 +33,10 @@ import org.ohdsi.circe.vocabulary.ConceptSetExpression;
  * Base test
  */
 public class BaseTest {
+    
+    private static final Long[] includedCovariateIds = new Long[]{
+        4206591215L
+    };
 
     /**
      * This will create a cohort for with a default name and ID
@@ -728,8 +733,8 @@ public class BaseTest {
             }
 
             @Override
-            public List<Integer> getIncludedCovariateIds() {
-                return new ArrayList<>();
+            public List<Long> getIncludedCovariateIds() {
+                return new ArrayList<>(Arrays.asList(includedCovariateIds));
             }
 
             @Override

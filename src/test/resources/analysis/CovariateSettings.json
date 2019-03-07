@@ -113,7 +113,7 @@
         "addDescendantsToInclude": false,
         "excludedCovariateConceptIds": [],
         "addDescendantsToExclude": false,
-        "includedCovariateIds": [],
+        "includedCovariateIds": [4206591215],
         "attr_fun": "getDbDefaultCovariateData",
         "attr_class": "covariateSettings"
     }
