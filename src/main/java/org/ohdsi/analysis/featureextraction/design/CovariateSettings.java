@@ -806,7 +806,7 @@ public interface CovariateSettings extends RLangClass {
      * @return
      */
     @JsonGetter("includedCovariateIds")
-    List<Integer> getIncludedCovariateIds();
+    List<Long> getIncludedCovariateIds();
 
     /**
      *
