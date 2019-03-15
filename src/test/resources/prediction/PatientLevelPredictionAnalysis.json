@@ -324,8 +324,8 @@
             }
         }, {
             "GradientBoostingMachineSettings": {
-                "nTrees": [10,100],
-                "nThread": 20,
+                "ntrees": [10,100],
+                "nthread": 20,
                 "maxDepth": [4,6,17],
                 "minRows": [20],
                 "learnRate": [0.01,0.1],

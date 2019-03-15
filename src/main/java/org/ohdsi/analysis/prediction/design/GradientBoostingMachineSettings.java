@@ -16,14 +16,14 @@ public interface GradientBoostingMachineSettings extends ModelSettings, SeedSett
      *
      * @return
      */
-    @JsonGetter("nTrees")
+    @JsonGetter("ntrees")
     Collection<Integer> getNTrees();
 
     /**
      *
      * @return
      */
-    @JsonGetter("nThread")
+    @JsonGetter("nthread")
     Integer getNThread();
 
     /**
