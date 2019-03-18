@@ -5,6 +5,7 @@ import java.util.Collections;
 import org.json.JSONException;
 import org.junit.Test;
 import org.ohdsi.analysis.BaseTest;
+import org.ohdsi.analysis.cohortcharacterization.design.CcResultType;
 import org.ohdsi.analysis.cohortcharacterization.design.CohortCharacterizationStrata;
 import org.ohdsi.circe.cohortdefinition.CohortExpression;
 import org.ohdsi.circe.cohortdefinition.ConceptSet;
@@ -60,6 +61,12 @@ public class CohortCharacterizationTest extends BaseTest {
 
                 FeatureAnalysis presetAnalysis = new FeatureAnalysis() {
 
+                    @Override
+                    public Long getId() {
+
+                        return 1L;
+                    }
+
                     public FeatureAnalysisType getType() {
 
                         return StandardFeatureAnalysisType.PRESET;
@@ -84,9 +91,21 @@ public class CohortCharacterizationTest extends BaseTest {
 
                         return "DemographicsGender";
                     }
+
+                    @Override
+                    public CcResultType getStatType() {
+
+                        return CcResultType.PREVALENCE;
+                    }
                 };
 
                 FeatureAnalysis criteriaAnalysis = new FeatureAnalysis() {
+
+                    @Override
+                    public Long getId() {
+
+                        return 1L;
+                    }
 
                     public FeatureAnalysisType getType() {
 
@@ -174,9 +193,21 @@ public class CohortCharacterizationTest extends BaseTest {
 
                         return Arrays.asList(maleCriteria, femaleCriteria);
                     }
+
+                    @Override
+                    public CcResultType getStatType() {
+
+                        return CcResultType.PREVALENCE;
+                    }
                 };
 
                 FeatureAnalysis rawSqlAnalysis = new FeatureAnalysis() {
+
+                    @Override
+                    public Long getId() {
+
+                        return 1L;
+                    }
 
                     public FeatureAnalysisType getType() {
 
@@ -201,6 +232,12 @@ public class CohortCharacterizationTest extends BaseTest {
                     public String getDesign() {
 
                         return "SELECT CAST(gender_concept_id AS BIGINT) * 1000 + @analysis_id AS covariate_id, COUNT(*) AS sum_value FROM @cohort_table cohort INNER JOIN @cdm_database_schema.person ON cohort.subject_id = person.person_id WHERE gender_concept_id != 0 AND cohort.cohort_definition_id = @cohort_definition_id GROUP BY gender_concept_id";
+                    }
+
+                    @Override
+                    public CcResultType getStatType() {
+
+                        return CcResultType.PREVALENCE;
                     }
                 };
 
