@@ -7,19 +7,11 @@ import org.junit.Test;
 import org.ohdsi.analysis.BaseTest;
 import org.ohdsi.analysis.cohortcharacterization.design.CcResultType;
 import org.ohdsi.analysis.cohortcharacterization.design.CohortCharacterizationStrata;
-import org.ohdsi.circe.cohortdefinition.CohortExpression;
 import org.ohdsi.circe.cohortdefinition.ConceptSet;
 import org.ohdsi.circe.cohortdefinition.CorelatedCriteria;
-import org.ohdsi.circe.cohortdefinition.Criteria;
 import org.ohdsi.circe.cohortdefinition.CriteriaGroup;
 import org.ohdsi.circe.cohortdefinition.DemographicCriteria;
-import org.ohdsi.circe.cohortdefinition.DrugExposure;
-import org.ohdsi.circe.cohortdefinition.ObservationFilter;
-import org.ohdsi.circe.cohortdefinition.Period;
-import org.ohdsi.circe.cohortdefinition.PrimaryCriteria;
-import org.ohdsi.circe.cohortdefinition.ResultLimit;
 import org.ohdsi.circe.vocabulary.Concept;
-import org.ohdsi.circe.vocabulary.ConceptSetExpression;
 import org.ohdsi.analysis.Utils;
 import org.ohdsi.analysis.Cohort;
 import org.ohdsi.analysis.cohortcharacterization.design.CohortCharacterization;
@@ -44,6 +36,12 @@ public class CohortCharacterizationTest extends BaseTest {
     public void testCohortCharacterizationSerialization() throws IOException, JSONException {
 
         CohortCharacterization cc = new CohortCharacterization() {
+
+            @Override
+            public List<ConceptSet> getStrataConceptSets() {
+
+                return Collections.emptyList();
+            }
 
             @Override
             public String getName() {
@@ -279,6 +277,12 @@ public class CohortCharacterizationTest extends BaseTest {
             public Collection<? extends CohortCharacterizationStrata> getStratas() {
 
                 return Collections.emptyList();
+            }
+
+            @Override
+            public Boolean getStrataOnly() {
+
+                return false;
             }
         };
 

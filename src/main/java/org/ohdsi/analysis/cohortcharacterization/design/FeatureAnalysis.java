@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.ohdsi.analysis.WithId;
 
 @JsonPropertyOrder({ "id", "type", "name", "domain", "statType", "descr", "design" })
-public interface FeatureAnalysis extends WithId<Long> {
+public interface FeatureAnalysis<T, N extends Number> extends WithId<N> {
 
     @JsonGetter("type")
     FeatureAnalysisType getType();
@@ -20,7 +20,7 @@ public interface FeatureAnalysis extends WithId<Long> {
     String getDescr();
 
     @JsonGetter("design")
-    Object getDesign();
+    T getDesign();
 
     @JsonGetter("statType")
     CcResultType getStatType();
