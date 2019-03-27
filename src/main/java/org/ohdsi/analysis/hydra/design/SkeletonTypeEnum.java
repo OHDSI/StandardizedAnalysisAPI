@@ -15,7 +15,9 @@ public enum SkeletonTypeEnum {
     /**
      *
      */
-    PATIENT_LEVEL_PREDICTION_STUDY("PatientLevelPredictionStudy");
+    PATIENT_LEVEL_PREDICTION_STUDY("PatientLevelPredictionStudy"),
+
+    COHORT_CHARACTERIZATION("CohortCharacterizationStudy");
 
     /**
      *
