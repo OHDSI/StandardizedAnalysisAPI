@@ -23,5 +23,7 @@ public interface FeatureAnalysis<T, N extends Number> extends WithId<N> {
     T getDesign();
 
     @JsonGetter("statType")
-    CcResultType getStatType();
+    default CcResultType getStatType() {
+        return CcResultType.PREVALENCE;
+    }
 }

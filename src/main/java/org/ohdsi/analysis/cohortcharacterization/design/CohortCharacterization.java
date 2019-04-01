@@ -3,6 +3,7 @@ package org.ohdsi.analysis.cohortcharacterization.design;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.Collection;
+import java.util.Collections;
 import org.ohdsi.analysis.Cohort;
 import org.ohdsi.circe.cohortdefinition.ConceptSet;
 
@@ -25,8 +26,12 @@ public interface CohortCharacterization {
     Collection<? extends CohortCharacterizationStrata> getStratas();
 
     @JsonGetter("strataOnly")
-    Boolean getStrataOnly();
+    default Boolean getStrataOnly() {
+        return false;
+    }
 
     @JsonGetter("strataConceptSets")
-    Collection<ConceptSet> getStrataConceptSets();
+    default Collection<ConceptSet> getStrataConceptSets() {
+        return Collections.emptyList();
+    }
 }
