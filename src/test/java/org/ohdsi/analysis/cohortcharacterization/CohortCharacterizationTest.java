@@ -5,20 +5,13 @@ import java.util.Collections;
 import org.json.JSONException;
 import org.junit.Test;
 import org.ohdsi.analysis.BaseTest;
+import org.ohdsi.analysis.cohortcharacterization.design.CcResultType;
 import org.ohdsi.analysis.cohortcharacterization.design.CohortCharacterizationStrata;
-import org.ohdsi.circe.cohortdefinition.CohortExpression;
 import org.ohdsi.circe.cohortdefinition.ConceptSet;
 import org.ohdsi.circe.cohortdefinition.CorelatedCriteria;
-import org.ohdsi.circe.cohortdefinition.Criteria;
 import org.ohdsi.circe.cohortdefinition.CriteriaGroup;
 import org.ohdsi.circe.cohortdefinition.DemographicCriteria;
-import org.ohdsi.circe.cohortdefinition.DrugExposure;
-import org.ohdsi.circe.cohortdefinition.ObservationFilter;
-import org.ohdsi.circe.cohortdefinition.Period;
-import org.ohdsi.circe.cohortdefinition.PrimaryCriteria;
-import org.ohdsi.circe.cohortdefinition.ResultLimit;
 import org.ohdsi.circe.vocabulary.Concept;
-import org.ohdsi.circe.vocabulary.ConceptSetExpression;
 import org.ohdsi.analysis.Utils;
 import org.ohdsi.analysis.Cohort;
 import org.ohdsi.analysis.cohortcharacterization.design.CohortCharacterization;
@@ -45,6 +38,12 @@ public class CohortCharacterizationTest extends BaseTest {
         CohortCharacterization cc = new CohortCharacterization() {
 
             @Override
+            public List<ConceptSet> getStrataConceptSets() {
+
+                return Collections.emptyList();
+            }
+
+            @Override
             public String getName() {
 
                 return "CC test";
@@ -59,6 +58,12 @@ public class CohortCharacterizationTest extends BaseTest {
             public List<FeatureAnalysis> getFeatureAnalyses() {
 
                 FeatureAnalysis presetAnalysis = new FeatureAnalysis() {
+
+                    @Override
+                    public Long getId() {
+
+                        return 1L;
+                    }
 
                     public FeatureAnalysisType getType() {
 
@@ -84,9 +89,21 @@ public class CohortCharacterizationTest extends BaseTest {
 
                         return "DemographicsGender";
                     }
+
+                    @Override
+                    public CcResultType getStatType() {
+
+                        return CcResultType.PREVALENCE;
+                    }
                 };
 
                 FeatureAnalysis criteriaAnalysis = new FeatureAnalysis() {
+
+                    @Override
+                    public Long getId() {
+
+                        return 1L;
+                    }
 
                     public FeatureAnalysisType getType() {
 
@@ -174,9 +191,21 @@ public class CohortCharacterizationTest extends BaseTest {
 
                         return Arrays.asList(maleCriteria, femaleCriteria);
                     }
+
+                    @Override
+                    public CcResultType getStatType() {
+
+                        return CcResultType.PREVALENCE;
+                    }
                 };
 
                 FeatureAnalysis rawSqlAnalysis = new FeatureAnalysis() {
+
+                    @Override
+                    public Long getId() {
+
+                        return 1L;
+                    }
 
                     public FeatureAnalysisType getType() {
 
@@ -201,6 +230,12 @@ public class CohortCharacterizationTest extends BaseTest {
                     public String getDesign() {
 
                         return "SELECT CAST(gender_concept_id AS BIGINT) * 1000 + @analysis_id AS covariate_id, COUNT(*) AS sum_value FROM @cohort_table cohort INNER JOIN @cdm_database_schema.person ON cohort.subject_id = person.person_id WHERE gender_concept_id != 0 AND cohort.cohort_definition_id = @cohort_definition_id GROUP BY gender_concept_id";
+                    }
+
+                    @Override
+                    public CcResultType getStatType() {
+
+                        return CcResultType.PREVALENCE;
                     }
                 };
 
@@ -242,6 +277,12 @@ public class CohortCharacterizationTest extends BaseTest {
             public Collection<? extends CohortCharacterizationStrata> getStratas() {
 
                 return Collections.emptyList();
+            }
+
+            @Override
+            public Boolean getStrataOnly() {
+
+                return false;
             }
         };
 

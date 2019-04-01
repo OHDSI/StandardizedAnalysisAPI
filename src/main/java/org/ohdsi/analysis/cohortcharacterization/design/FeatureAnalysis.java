@@ -2,9 +2,10 @@ package org.ohdsi.analysis.cohortcharacterization.design;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import org.ohdsi.analysis.WithId;
 
-@JsonPropertyOrder({ "id", "type", "name", "domain", "descr", "design" })
-public interface FeatureAnalysis {
+@JsonPropertyOrder({ "id", "type", "name", "domain", "statType", "descr", "design" })
+public interface FeatureAnalysis<T, N extends Number> extends WithId<N> {
 
     @JsonGetter("type")
     FeatureAnalysisType getType();
@@ -19,5 +20,10 @@ public interface FeatureAnalysis {
     String getDescr();
 
     @JsonGetter("design")
-    Object getDesign();
+    T getDesign();
+
+    @JsonGetter("statType")
+    default CcResultType getStatType() {
+        return CcResultType.PREVALENCE;
+    }
 }
