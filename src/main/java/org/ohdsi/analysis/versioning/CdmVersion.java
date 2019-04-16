@@ -9,6 +9,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CdmVersion {
 
-    double min() default -1;
-    double max() default -1;
+    String semver();
 }
