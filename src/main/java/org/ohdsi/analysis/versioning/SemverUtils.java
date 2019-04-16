@@ -2,6 +2,7 @@ package org.ohdsi.analysis.versioning;
 
 import org.apache.commons.lang3.StringUtils;
 import org.graalvm.polyglot.Context;
+import org.graalvm.polyglot.PolyglotException;
 
 import java.util.List;
 
@@ -21,7 +22,15 @@ public class SemverUtils {
         jsContext.eval(JS_LANG, "var exports = module = {}; " + SEMVER_JS + " ; var semver = exports;");
         jsContext.eval(JS_LANG, SEMVER_INTERSECT_JS);
         String rangesLine = "'" + StringUtils.join(ranges, "', '") + "'";
-        jsContext.eval(JS_LANG, "var intersection = intersect(" + rangesLine + ").toString()");
+        try {
+            jsContext.eval(JS_LANG, "var intersection = intersect(" + rangesLine + ").toString()");
+        } catch (PolyglotException ex) {
+            if (ex.getMessage().matches("Error: Range .+ is not compatible with .+")) {
+                return null;
+            } else {
+                throw ex;
+            }
+        }
         return jsContext.getBindings(JS_LANG).getMember("intersection").asString();
     }
 }
