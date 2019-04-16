@@ -29,13 +29,17 @@ public class CdmVersionUtils {
                 throw new IncompatibleVersionsException("Selected parameters don't have a common compatible CDM range");
             }
 
-            String overallIntersection = SemverUtils.getRangesIntersection(Arrays.asList(compatibilitySpec.getCdmVersionRange(), derivedIntersection));
-            if (overallIntersection == null) {
-                throw new IncompatibleVersionsException(
-                        String.format("User-defined CDM range (%s) doesn't match derived CDM range (%s)", compatibilitySpec.getCdmVersionRange(), derivedIntersection)
-                );
+            if (!compatibilitySpec.getCdmVersionRange().equals(VERSION_X_RANGE)) {
+                String overallIntersection = SemverUtils.getRangesIntersection(Arrays.asList(compatibilitySpec.getCdmVersionRange(), derivedIntersection));
+                if (overallIntersection == null) {
+                    throw new IncompatibleVersionsException(
+                            String.format("User-defined CDM range (%s) doesn't match derived CDM range (%s)", compatibilitySpec.getCdmVersionRange(), derivedIntersection)
+                    );
+                }
+                compatibilitySpec.setCdmVersionRange(overallIntersection);
+            } else {
+                compatibilitySpec.setCdmVersionRange(derivedIntersection);
             }
-            compatibilitySpec.setCdmVersionRange(overallIntersection);
         }
     }
 
