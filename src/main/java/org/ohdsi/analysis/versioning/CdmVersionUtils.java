@@ -31,12 +31,11 @@ public class CdmVersionUtils {
 
             if (!compatibilitySpec.getCdmVersionRange().equals(VERSION_X_RANGE)) {
                 String overallIntersection = SemverUtils.getRangesIntersection(Arrays.asList(compatibilitySpec.getCdmVersionRange(), derivedIntersection));
-                if (overallIntersection == null) {
+                if (overallIntersection == null || !overallIntersection.equals(compatibilitySpec.getCdmVersionRange())) {
                     throw new IncompatibleVersionsException(
                             String.format("User-defined CDM range (%s) does not include derived CDM range (%s)", compatibilitySpec.getCdmVersionRange(), derivedIntersection)
                     );
                 }
-                compatibilitySpec.setCdmVersionRange(overallIntersection);
             } else {
                 compatibilitySpec.setCdmVersionRange(derivedIntersection);
             }
