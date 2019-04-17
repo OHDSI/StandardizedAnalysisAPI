@@ -7,6 +7,10 @@
     <groupId>org.ohdsi</groupId>
     <artifactId>standardized-analysis-api</artifactId>
     <version>1.2.0-SNAPSHOT</version>
+    <properties>
+        <graalvm.version>1.0.0-rc15</graalvm.version>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -25,7 +29,7 @@
         <repository>
             <id>central</id>
             <name>Central Repository</name>
-            <url>http://repo.maven.apache.org/maven2/ </url>
+            <url>http://repo.maven.apache.org/maven2/</url>
         </repository>
         <repository>
             <id>ohdsi</id>
@@ -61,6 +65,29 @@
             <artifactId>guava</artifactId>
             <version>25.1-jre</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.zafarkhaja</groupId>
+            <artifactId>java-semver</artifactId>
+            <version>0.9.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.graalvm.sdk</groupId>
+            <artifactId>graal-sdk</artifactId>
+            <version>${graalvm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.graalvm.js</groupId>
+            <artifactId>js</artifactId>
+            <version>${graalvm.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.graalvm.js</groupId>
+            <artifactId>js-scriptengine</artifactId>
+            <version>${graalvm.version}</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.ohdsi</groupId>

@@ -12,7 +12,14 @@ import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.type.TypeFactory;
+import org.apache.commons.io.IOUtils;
+import org.ohdsi.analysis.versioning.VersionedDeserializerModifier;
+import org.ohdsi.analysis.versioning.VersionedSerializerModifier;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Objects;
 import java.util.function.Function;
 import java.util.regex.Matcher;
@@ -42,6 +49,12 @@ public class Utils {
         if (!includeNulls) {
             objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         }
+
+        objectMapper.registerModule(
+            new SimpleModule()
+                .setSerializerModifier(new VersionedSerializerModifier())
+                .setDeserializerModifier(new VersionedDeserializerModifier())
+        );
 
         return objectMapper;
     }
@@ -140,5 +153,14 @@ public class Utils {
         Pattern p = Pattern.compile("^[a-zA-Z0-9.]+$");
         Matcher m = p.matcher(str);
         return m.find();
+    }
+
+    public static String GetResourceAsString(String resource) {
+
+        try (InputStream inputStream = Utils.class.getResourceAsStream(resource)) {
+            return IOUtils.toString(inputStream, "UTF-8");
+        } catch (IOException e) {
+            throw new RuntimeException("Resource not found: " + resource);
+        }
     }
 }
