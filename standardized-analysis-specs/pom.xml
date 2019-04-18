@@ -7,9 +7,6 @@
     <groupId>org.ohdsi</groupId>
     <artifactId>standardized-analysis-specs</artifactId>
     <version>1.2.0-SNAPSHOT</version>
-    <properties>
-        <graalvm.version>1.0.0-rc15</graalvm.version>
-    </properties>
 
     <build>
         <plugins>
