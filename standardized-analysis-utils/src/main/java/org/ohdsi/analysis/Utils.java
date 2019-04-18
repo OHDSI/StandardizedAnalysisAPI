@@ -27,11 +27,11 @@ import java.util.regex.Pattern;
 
 public class Utils {
 
-    private static ObjectMapper getObjectMapper() {
+    public static ObjectMapper getObjectMapper() {
         return getObjectMapper(false);
     }
     
-    private static ObjectMapper getObjectMapper(Boolean includeNulls) {
+    public static ObjectMapper getObjectMapper(Boolean includeNulls) {
 
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.disable(
