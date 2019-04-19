@@ -10,6 +10,7 @@ import com.fasterxml.jackson.core.util.Separators;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.MapperFeature;
+import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.module.SimpleModule;
@@ -27,11 +28,24 @@ import java.util.regex.Pattern;
 
 public class Utils {
 
-    public static ObjectMapper getObjectMapper() {
-        return getObjectMapper(false);
+    private static final ObjectMapper OBJECT_MAPPER = buildObjectMapper();
+
+    public static void registerObjectMapperModule(Module module) {
+
+        OBJECT_MAPPER.registerModule(module);
     }
-    
-    public static ObjectMapper getObjectMapper(Boolean includeNulls) {
+
+    private static ObjectMapper buildObjectMapper() {
+
+        return buildObjectMapper(false);
+    }
+
+    private static ObjectMapper getObjectMapper() {
+
+        return OBJECT_MAPPER;
+    }
+
+    private static ObjectMapper buildObjectMapper(Boolean includeNulls) {
 
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.disable(
@@ -65,8 +79,8 @@ public class Utils {
     
     public static String serializePretty(Object object, Boolean includeNulls) throws JsonProcessingException {
 
-        ObjectMapper objectMapper = getObjectMapper(includeNulls);
-        
+        ObjectMapper objectMapper = buildObjectMapper(includeNulls);
+
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         DefaultPrettyPrinter prettyPrinter = new DefaultPrettyPrinter() {
@@ -89,7 +103,7 @@ public class Utils {
     
     public static String serialize(Object object, Boolean includeNulls) {
         try {
-            ObjectMapper objectMapper = getObjectMapper(includeNulls);
+            ObjectMapper objectMapper = buildObjectMapper(includeNulls);
             return objectMapper.writeValueAsString(object);
         } catch (Exception ex) {
             throw new RuntimeException(ex);
@@ -128,9 +142,9 @@ public class Utils {
         if (data == null) {
             return null;
         }
-        try{
+        try {
             return objectMapper.readValue(data, type);
-        }catch(Exception ex) {
+        } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
     }
