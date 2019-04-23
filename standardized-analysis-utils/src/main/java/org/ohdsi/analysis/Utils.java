@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.cfg.HandlerInstantiator;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import org.apache.commons.io.IOUtils;
@@ -32,6 +33,7 @@ import java.util.regex.Pattern;
 public class Utils {
 
     private static final Set<Module> OBJECT_MAPPER_MODULES = ConcurrentHashMap.newKeySet();
+    private static HandlerInstantiator OBJECT_MAPPER_HANDLER_INSTANTIATOR = null;
     private static final Map<ObjectMapperConfig, ObjectMapper> OBJECT_MAPPER = new ConcurrentHashMap<>();
 
     protected static class ObjectMapperConfig {
@@ -82,6 +84,12 @@ public class Utils {
         OBJECT_MAPPER.clear();
     }
 
+    public static void setObjectMapperHandlerInstantiator(HandlerInstantiator instantiator) {
+
+        OBJECT_MAPPER_HANDLER_INSTANTIATOR = instantiator;
+        OBJECT_MAPPER.clear();
+    }
+
     private static ObjectMapper getObjectMapper() {
 
         return getObjectMapper(ObjectMapperConfig.newInstance().withIncludeNulls(false));
@@ -118,6 +126,10 @@ public class Utils {
         );
 
         OBJECT_MAPPER_MODULES.forEach(objectMapper::registerModule);
+
+        if (OBJECT_MAPPER_HANDLER_INSTANTIATOR != null) {
+            objectMapper.setHandlerInstantiator(OBJECT_MAPPER_HANDLER_INSTANTIATOR);
+        }
 
         return objectMapper;
     }
