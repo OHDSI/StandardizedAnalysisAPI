@@ -6,7 +6,7 @@
 
     <groupId>org.ohdsi</groupId>
     <artifactId>standardized-analysis-utils</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <properties>
         <graalvm.version>1.0.0-rc15</graalvm.version>
     </properties>
