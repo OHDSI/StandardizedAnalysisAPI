@@ -5,4 +5,9 @@ import org.ohdsi.circe.cohortdefinition.ConceptSet;
 
 public interface FeatureAnalysisWithCriteria<T, N extends Number> extends FeatureAnalysis<List<T>, N> {
 	List<ConceptSet> getConceptSets();
+
+	default FeatureAnalysisAggregate getAggregate() {
+
+		return EventCountAggregate.getInstance();
+	}
 }
