@@ -34,13 +34,13 @@ public final class EventCountAggregate implements FeatureAnalysisAggregate {
     }
 
     @Override
-    public boolean hasSourceTable() {
+    public boolean hasQuery() {
 
         return false;
     }
 
     @Override
-    public String getSourceTable() {
+    public String getQuery() {
 
         return null;
     }

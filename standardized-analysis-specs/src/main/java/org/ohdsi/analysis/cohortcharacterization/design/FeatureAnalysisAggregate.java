@@ -5,6 +5,6 @@ public interface FeatureAnalysisAggregate {
     FeatureAnalysisDomain getDomain();
     AggregateFunction getFunction();
     String getExpression();
-    boolean hasSourceTable();
-    String getSourceTable();
+    boolean hasQuery();
+    String getQuery();
 }
