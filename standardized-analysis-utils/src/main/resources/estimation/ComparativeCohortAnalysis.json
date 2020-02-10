@@ -3,7 +3,7 @@
 	"name": "Test",
 	"version": "Test",
 	"organizationName": "OHDSI",
-	"packageName": "MyPackageNameGoesHere",
+	"packageName": "UnitTestPackage",
 	"skeletonType": "ComparativeEffectStudy",
 	"skeletonVersion": "v0.0.1",
         "cohortDefinitions": [{

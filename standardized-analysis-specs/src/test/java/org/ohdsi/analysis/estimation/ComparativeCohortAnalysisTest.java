@@ -81,7 +81,7 @@ public class ComparativeCohortAnalysisTest extends BaseTest {
             
             @Override
             public String getPackageName() {
-                return "MyPackageNameGoesHere";
+                return "UnitTestPackage";
             }
             
             @Override
