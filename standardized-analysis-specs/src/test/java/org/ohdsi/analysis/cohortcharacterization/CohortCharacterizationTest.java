@@ -392,6 +392,18 @@ public class CohortCharacterizationTest extends BaseTest {
 
                 return 32.0;
             }
+
+            @Override
+            public Integer getAggregateId() {
+
+                return 0;
+            }
+
+            @Override
+            public String getAggregateName() {
+
+                return "";
+            }
         };
 
         JSONAssert.assertEquals(readResource("/cohortcharacterization/DistributionStat.json"), Utils.serializePretty(stat), false);

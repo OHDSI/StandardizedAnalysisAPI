@@ -44,4 +44,10 @@ public final class EventCountAggregate implements FeatureAnalysisAggregate {
 
         return null;
     }
+
+    @Override
+    public Integer getId() {
+
+        return null;
+    }
 }

@@ -1,6 +1,8 @@
 package org.ohdsi.analysis.cohortcharacterization.design;
 
-public interface FeatureAnalysisAggregate {
+import org.ohdsi.analysis.WithId;
+
+public interface FeatureAnalysisAggregate extends WithId<Integer> {
     String getName();
     FeatureAnalysisDomain getDomain();
     AggregateFunction getFunction();
