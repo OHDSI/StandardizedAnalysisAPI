@@ -71,4 +71,9 @@ public final class EventCountAggregate implements FeatureAnalysisAggregate {
 
         return null;
     }
+
+    @Override
+    public boolean isMissingMeansZero() {
+        return true;
+    }
 }

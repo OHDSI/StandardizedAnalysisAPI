@@ -16,4 +16,5 @@ public interface FeatureAnalysisAggregate extends WithId<Integer> {
     String getJoinTable();
     String getJoinCondition();
     TableJoin getJoinType();
+    boolean isMissingMeansZero();
 }
