@@ -38,4 +38,8 @@ public interface DistributionStat extends BaseStat {
 
     @JsonGetter("aggregateName")
     String getAggregateName();
+
+    @JsonGetter("missingMeansZero")
+    Boolean isMissingMeansZero();
+
 }

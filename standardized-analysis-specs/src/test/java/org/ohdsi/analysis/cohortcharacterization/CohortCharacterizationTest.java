@@ -404,6 +404,12 @@ public class CohortCharacterizationTest extends BaseTest {
 
                 return "";
             }
+
+            @Override
+            public Boolean isMissingMeansZero() {
+
+                return false;
+            }
         };
 
         JSONAssert.assertEquals(readResource("/cohortcharacterization/DistributionStat.json"), Utils.serializePretty(stat), false);
