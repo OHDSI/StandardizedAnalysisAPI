@@ -1,6 +1,8 @@
 {
   "covariateId": 901,
   "covariateName": "Charlson index - Romano adaptation",
+  "aggregateId": 0,
+  "aggregateName": "",
   "conceptId": 0,
   "count": 7198,
   "avg": 6.36,

@@ -3,7 +3,7 @@ package org.ohdsi.analysis.cohortcharacterization.result;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "covariateId", "covariateName", "conceptId", "count", "avg", "stdDev", "min", "p10", "p25", "median", "p75", "p90", "max" })
+@JsonPropertyOrder({ "covariateId", "covariateName", "aggregateId", "aggregateName", "conceptId", "count", "avg", "stdDev", "min", "p10", "p25", "median", "p75", "p90", "max" })
 public interface DistributionStat extends BaseStat {
 
     @JsonGetter("avg")
@@ -32,4 +32,14 @@ public interface DistributionStat extends BaseStat {
 
     @JsonGetter("max")
     Double getMax();
+
+    @JsonGetter("aggregateId")
+    Integer getAggregateId();
+
+    @JsonGetter("aggregateName")
+    String getAggregateName();
+
+    @JsonGetter("missingMeansZero")
+    Boolean isMissingMeansZero();
+
 }

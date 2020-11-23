@@ -11,4 +11,10 @@ public interface BaseCriteriaFeature<T> {
 
 	@JsonGetter("expression")
 	T getExpression();
+
+	@JsonGetter("aggregate")
+	default FeatureAnalysisAggregate getAggregate() {
+
+		return EventCountAggregate.getInstance();
+	}
 }
