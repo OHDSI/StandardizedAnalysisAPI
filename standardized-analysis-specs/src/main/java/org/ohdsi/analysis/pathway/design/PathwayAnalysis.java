@@ -18,7 +18,10 @@ public interface PathwayAnalysis {
 
     @JsonGetter("combinationWindow")
     Integer getCombinationWindow();
-
+		
+    @JsonGetter("minSegmentLength")
+    Integer getMinSegmentLength();
+	
     @JsonGetter("minCellCount")
     Integer getMinCellCount();
 

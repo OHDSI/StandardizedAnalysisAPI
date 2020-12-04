@@ -1,0 +1,10 @@
+{
+  "name": "Mock Analysis",
+  "minSegmentLength": 0,
+  "combinationWindow": 0,
+  "maxDepth": 5,
+  "targetCohorts": [ ],
+  "allowRepeats": false,
+  "minCellCount": 0,
+  "eventCohorts": [ ]
+}
