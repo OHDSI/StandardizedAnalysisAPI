@@ -7,12 +7,13 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 import java.math.BigDecimal;
 import java.util.Collection;
 import org.ohdsi.analysis.Cohort;
+import org.ohdsi.analysis.StudyPackage;
 
 /**
  *
  * @author Anthony Sena <https://github.com/anthonysena>
  */
-public interface PatientLevelPredictionAnalysis {
+public interface PatientLevelPredictionAnalysis extends StudyPackage {
 
     /**
      *
@@ -48,13 +49,6 @@ public interface PatientLevelPredictionAnalysis {
      */
     @JsonGetter("organizationName")
     String getOrganizationName();
-
-    /**
-     *
-     * @return
-     */
-    @JsonGetter("packageName")
-    String getPackageName();
 
     /**
      *
