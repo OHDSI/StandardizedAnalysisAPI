@@ -5,12 +5,13 @@ import java.util.Collection;
 import org.ohdsi.analysis.Cohort;
 import org.ohdsi.analysis.ConceptSetCrossReference;
 import org.ohdsi.analysis.hydra.design.SkeletonTypeEnum;
+import org.ohdsi.analysis.StudyPackage;
 
 /**
  *
  * @author Anthony Sena <https://github.com/anthonysena>
  */
-public interface EstimationAnalysis {
+public interface EstimationAnalysis extends StudyPackage {
 
     /**
      * Get cohortDefinitions
@@ -149,15 +150,6 @@ public interface EstimationAnalysis {
      */
     @JsonGetter(value = "organizationName")
     String getOrganizationName();
-
-    /**
-     * The name of the R Package for execution
-     *
-     * @return packageName
-     *
-     */
-    @JsonGetter(value = "packageName")
-    String getPackageName();
 
     /**
      * Get doPositiveControlSynthesis
