@@ -4,16 +4,17 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * List of algorithms as defined in 
+ * Cyclops http://ohdsi.github.io/Cyclops/
+ * @author Anthony Sena sena@ohdsi.org
  */
 public enum AlgorithmTypeEnum {
     /**
-     *
+     * Name of fitting algorithm to employ
      */
     CCD("ccd"),
     /**
-     *
+     * Name of fitting algorithm to employ
      */
     MM("mm");
 
@@ -29,11 +30,6 @@ public enum AlgorithmTypeEnum {
         return String.valueOf(value);
     }
 
-    /**
-     *
-     * @param text
-     * @return
-     */
     @JsonCreator
     public static AlgorithmTypeEnum fromValue(String text) {
         for (AlgorithmTypeEnum b : AlgorithmTypeEnum.values()) {

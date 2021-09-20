@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public enum EstimationTypeEnum {
 
@@ -26,11 +26,6 @@ public enum EstimationTypeEnum {
         return String.valueOf(value);
     }
 
-    /**
-     *
-     * @param text
-     * @return
-     */
     @JsonCreator
     public static EstimationTypeEnum fromValue(String text) {
         for (EstimationTypeEnum b : EstimationTypeEnum.values()) {

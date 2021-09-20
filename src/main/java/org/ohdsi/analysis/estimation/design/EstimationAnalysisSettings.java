@@ -5,23 +5,14 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "estimationType")
 public interface EstimationAnalysisSettings {
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("estimationType")
     EstimationTypeEnum getEstimationType();
 
-    /**
-     *
-     * @param <T>
-     * @return
-     */
     @JsonGetter("analysisSpecification")
     <T extends Settings> T getAnalysisSpecification();
 }

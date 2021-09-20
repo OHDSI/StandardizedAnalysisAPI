@@ -4,14 +4,10 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public interface SeedSettings {
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("seed")
     Integer getSeed();
 }

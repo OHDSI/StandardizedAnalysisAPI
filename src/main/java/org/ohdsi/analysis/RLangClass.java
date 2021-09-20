@@ -6,7 +6,7 @@ public interface RLangClass {
     
     /**
      *
-     * @return
+     * @return The attribute class as defined in the corresponding R class
      */
     @JsonGetter("attr_class")
     String getAttrClass();

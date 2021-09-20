@@ -5,14 +5,10 @@ import java.util.Collection;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public interface CovariateArgs {
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("covariateIds")
     Collection<Integer> getCovariateIds();
 }

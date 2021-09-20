@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 @JsonTypeName(ModelSettingsConst.NAIVE_BAYES)
 public interface NaiveBayesSettings extends ModelSettings {

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = As.WRAPPER_OBJECT)
 public interface ModelSettings {

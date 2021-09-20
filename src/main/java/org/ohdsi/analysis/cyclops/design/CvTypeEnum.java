@@ -10,13 +10,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum CvTypeEnum {
 
-    /**
-     *
-     */
     AUTO("auto"),
-    /**
-     *
-     */
     GRID("grid");
 
     private final String value;
@@ -31,11 +25,6 @@ public enum CvTypeEnum {
         return String.valueOf(value);
     }
 
-    /**
-     *
-     * @param text
-     * @return
-     */
     @JsonCreator
     public static CvTypeEnum fromValue(String text) {
         for (CvTypeEnum b : CvTypeEnum.values()) {
