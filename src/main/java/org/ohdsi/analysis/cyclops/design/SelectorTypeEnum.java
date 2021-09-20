@@ -5,20 +5,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public enum SelectorTypeEnum {
-    /**
-     *
-     */
     BY_PID("byPid"),
-    /**
-     *
-     */
     BY_ROW("byRow"),
-    /**
-     *
-     */
     AUTO("auto");
 
     private final String value;
@@ -33,11 +24,6 @@ public enum SelectorTypeEnum {
         return String.valueOf(value);
     }
 
-    /**
-     *
-     * @param text
-     * @return
-     */
     @JsonCreator
     public static SelectorTypeEnum fromValue(String text) {
         for (SelectorTypeEnum b : SelectorTypeEnum.values()) {

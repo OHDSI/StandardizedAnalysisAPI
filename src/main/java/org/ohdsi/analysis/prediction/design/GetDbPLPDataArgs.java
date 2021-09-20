@@ -5,21 +5,13 @@ import java.math.BigDecimal;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public interface GetDbPLPDataArgs {
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("maxSampleSize")
     BigDecimal getMaxSampleSize();
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("washoutPeriod")
     Integer getWashoutPeriod();
 }

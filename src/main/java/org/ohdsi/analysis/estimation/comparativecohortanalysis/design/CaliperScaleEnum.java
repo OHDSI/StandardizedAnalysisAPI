@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public enum CaliperScaleEnum {
 
@@ -34,11 +34,6 @@ public enum CaliperScaleEnum {
         return String.valueOf(value);
     }
 
-    /**
-     *
-     * @param text
-     * @return
-     */
     @JsonCreator
     public static CaliperScaleEnum fromValue(String text) {
         for (CaliperScaleEnum b : CaliperScaleEnum.values()) {

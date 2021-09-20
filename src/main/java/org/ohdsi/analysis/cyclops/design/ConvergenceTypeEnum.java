@@ -5,21 +5,12 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public enum ConvergenceTypeEnum {
 
-    /**
-     *
-     */
     GRADIENT("gradient"),
-    /**
-     *
-     */
     MITTAL("mittal"),
-    /**
-     *
-     */
     LANGE("lange");
 
     private final String value;
@@ -34,11 +25,6 @@ public enum ConvergenceTypeEnum {
         return String.valueOf(value);
     }
 
-    /**
-     *
-     * @param text
-     * @return
-     */
     @JsonCreator
     public static ConvergenceTypeEnum fromValue(String text) {
         for (ConvergenceTypeEnum b : ConvergenceTypeEnum.values()) {

@@ -8,20 +8,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum SkeletonTypeEnum {
 
-    /**
-     *
-     */
     COMPARATIVE_EFFECT_STUDY("ComparativeEffectStudy"),
-    /**
-     *
-     */
     PATIENT_LEVEL_PREDICTION_STUDY("PatientLevelPredictionStudy"),
-
     COHORT_CHARACTERIZATION("CohortCharacterizationStudy");
 
-    /**
-     *
-     */
     private final String value;
 
     SkeletonTypeEnum(String value) {
@@ -34,11 +24,6 @@ public enum SkeletonTypeEnum {
         return String.valueOf(value);
     }
 
-    /**
-     *
-     * @param text
-     * @return
-     */
     @JsonCreator
     public static SkeletonTypeEnum fromValue(String text) {
         for (SkeletonTypeEnum b : SkeletonTypeEnum.values()) {

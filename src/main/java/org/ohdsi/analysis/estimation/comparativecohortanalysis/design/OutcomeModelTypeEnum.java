@@ -34,11 +34,6 @@ public enum OutcomeModelTypeEnum {
         return String.valueOf(value);
     }
 
-    /**
-     *
-     * @param text
-     * @return
-     */
     @JsonCreator
     public static OutcomeModelTypeEnum fromValue(String text) {
         for (OutcomeModelTypeEnum b : OutcomeModelTypeEnum.values()) {

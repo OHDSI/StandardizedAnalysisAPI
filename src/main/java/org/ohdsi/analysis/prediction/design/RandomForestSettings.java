@@ -6,36 +6,20 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 @JsonTypeName(ModelSettingsConst.RANDOM_FOREST)
 public interface RandomForestSettings extends ModelSettings, SeedSettings {
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("mtries")
     Collection<Integer> getMtries();
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("ntrees")
     Collection<Integer> getNtrees();
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("maxDepth")
     Collection<Integer> getMaxDepth();
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("varImp")
     Collection<Boolean> getVarImp();
 }

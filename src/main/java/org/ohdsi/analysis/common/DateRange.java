@@ -19,7 +19,7 @@ import java.util.Date;
 
 /**
  *
- * @author Chris Knoll <cknoll@ohdsi.org>
+ * @author Chris Knoll cknoll@ohdsi.org
  */
 public class DateRange {
   public String startDate;

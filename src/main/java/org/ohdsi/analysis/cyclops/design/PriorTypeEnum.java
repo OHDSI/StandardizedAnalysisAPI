@@ -5,21 +5,12 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public enum PriorTypeEnum {
 
-    /**
-     *
-     */
     NONE("none"),
-    /**
-     *
-     */
     LAPLACE("laplace"),
-    /**
-     *
-     */
     NORMAL("normal");
 
     private final String value;
@@ -34,11 +25,6 @@ public enum PriorTypeEnum {
         return String.valueOf(value);
     }
 
-    /**
-     *
-     * @param text
-     * @return
-     */
     @JsonCreator
     public static PriorTypeEnum fromValue(String text) {
         for (PriorTypeEnum b : PriorTypeEnum.values()) {

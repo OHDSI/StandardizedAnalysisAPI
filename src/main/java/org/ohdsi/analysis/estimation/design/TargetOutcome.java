@@ -5,21 +5,13 @@ import java.util.Collection;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public interface TargetOutcome {
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("targetId")
     Long getTargetId();
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("outcomeIds")
     Collection<Long> getOutcomeIds();
 }
