@@ -5,29 +5,29 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 public interface ConceptSetCrossReference {
 
     /**
-     *
-     * @return
+     * 
+     * @return The concept set ID
      */
     @JsonGetter("conceptSetId")
   Integer getConceptSetId();
 
     /**
      *
-     * @return
+     * @return The target name
      */
     @JsonGetter("targetName")
   String getTargetName();
 
     /**
      *
-     * @return
+     * @return The target index
      */
     @JsonGetter("targetIndex")
   Integer getTargetIndex();
 
     /**
      *
-     * @return
+     * @return The property name
      */
     @JsonGetter("propertyName")
   String getPropertyName();

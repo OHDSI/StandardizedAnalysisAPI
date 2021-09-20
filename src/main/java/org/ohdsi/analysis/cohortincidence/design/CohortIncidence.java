@@ -29,7 +29,7 @@ import org.ohdsi.analysis.Utils;
 
 /**
  *
- * @author Chris Knoll <cknoll@ohdsi.org>
+ * @author Chris Knoll cknoll@ohdsi.org
  */
 @JsonPropertyOrder({ "cohortDefs", "targets", "outcomes", "timeAtRiskList", "conceptSets", "subgroups", "studyWindow" })
 public class CohortIncidence {

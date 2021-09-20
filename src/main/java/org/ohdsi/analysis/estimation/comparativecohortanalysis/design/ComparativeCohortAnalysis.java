@@ -8,22 +8,14 @@ import org.ohdsi.analysis.estimation.design.Settings;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 @JsonTypeName(EstimationAnalysisConst.COMPARATIVE_COHORT_ANALYSIS)
 public interface ComparativeCohortAnalysis extends Settings {
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("targetComparatorOutcomes")
     Collection<? extends TargetComparatorOutcomes> getTargetComparatorOutcomes();
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("cohortMethodAnalysisList")
     Collection<? extends CohortMethodAnalysis> getCohortMethodAnalysisList();
 }

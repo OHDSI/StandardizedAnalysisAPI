@@ -5,21 +5,13 @@ import org.ohdsi.analysis.RLangClass;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public interface StratifyByPs extends RLangClass {
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("numberOfStrata")
     Integer getNumberOfStrata();
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("baseSelection")
     BaseSelectionEnum getBaseSelection();
 }

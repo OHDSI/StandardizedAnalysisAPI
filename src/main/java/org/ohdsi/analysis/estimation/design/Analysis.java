@@ -5,21 +5,13 @@ import org.ohdsi.analysis.RLangClass;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public interface Analysis extends RLangClass {
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("analysisId")
     Integer getAnalysisId();
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("description")
     String getDescription();
 }

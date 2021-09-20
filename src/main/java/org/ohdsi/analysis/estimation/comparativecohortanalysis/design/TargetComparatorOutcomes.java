@@ -6,28 +6,16 @@ import org.ohdsi.analysis.estimation.design.TargetOutcome;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public interface TargetComparatorOutcomes extends TargetOutcome {
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("comparatorId")
     Long getComparatorId();
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("excludedCovariateConceptIds")
     Collection<Long> getExcludedCovariateConceptIds();
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("includedCovariateConceptIds")
     Collection<Long> getIncludedCovariateConceptIds();
 }

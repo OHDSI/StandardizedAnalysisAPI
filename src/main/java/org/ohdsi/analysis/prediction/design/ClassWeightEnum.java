@@ -5,17 +5,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public enum ClassWeightEnum {
 
-    /**
-     *
-     */
     NONE("None"),
-    /**
-     *
-     */
     BALANCED("Balanced");
 
     private final String value;
@@ -30,11 +24,6 @@ public enum ClassWeightEnum {
         return String.valueOf(value);
     }
 
-    /**
-     *
-     * @param text
-     * @return
-     */
     @JsonCreator
     public static ClassWeightEnum fromValue(String text) {
         for (ClassWeightEnum b : ClassWeightEnum.values()) {

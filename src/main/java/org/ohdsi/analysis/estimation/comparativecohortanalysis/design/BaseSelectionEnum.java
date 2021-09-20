@@ -36,11 +36,6 @@ public enum BaseSelectionEnum {
         return String.valueOf(value);
     }
 
-    /**
-     *
-     * @param text
-     * @return
-     */
     @JsonCreator
     public static BaseSelectionEnum fromValue(String text) {
         for (BaseSelectionEnum b : BaseSelectionEnum.values()) {
