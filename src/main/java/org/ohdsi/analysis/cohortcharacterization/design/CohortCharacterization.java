@@ -5,12 +5,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.Collection;
 import java.util.Collections;
 import org.ohdsi.analysis.Cohort;
+import org.ohdsi.analysis.WithId;
 import org.ohdsi.circe.cohortdefinition.ConceptSet;
 
-@JsonPropertyOrder({ "name", "cohorts", "featureAnalyses", "parameters", "stratas", "strataOnly", "strataConceptSets" })
-public interface CohortCharacterization {
+@JsonPropertyOrder({ "id", "name", "cohorts", "featureAnalyses", "parameters", "stratas", "strataOnly", "strataConceptSets" })
+public interface CohortCharacterization extends WithId<Long> {
 
-    @JsonGetter("name")
+		@JsonGetter("name")
     String getName();
 
     @JsonGetter("cohorts")

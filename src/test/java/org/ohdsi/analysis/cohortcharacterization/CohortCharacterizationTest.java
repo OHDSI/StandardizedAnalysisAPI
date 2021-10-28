@@ -36,7 +36,12 @@ public class CohortCharacterizationTest extends BaseTest {
     public void testCohortCharacterizationSerialization() throws IOException, JSONException {
 
         CohortCharacterization cc = new CohortCharacterization() {
+						@Override
+						public Long getId() {
 
+								return 1L;
+						}
+										
             @Override
             public List<ConceptSet> getStrataConceptSets() {
 
