@@ -6,7 +6,7 @@
 
     <groupId>org.ohdsi</groupId>
     <artifactId>standardized-analysis-specs</artifactId>
-    <version>1.4.0</version>
+    <version>1.5.0-SNAPSHOT</version>
 
     <build>
         <plugins>
@@ -21,14 +21,20 @@
             </plugin>
         </plugins>
     </build>
-
     <repositories>
-        <repository>
-            <id>ohdsi</id>
-            <name>repo.ohdsi.org</name>
-            <url>http://repo.ohdsi.org:8085/nexus/content/groups/public</url>
-        </repository>
+      <repository>
+        <id>ohdsi</id>
+        <name>repo.ohdsi.org</name>
+        <url>https://repo.ohdsi.org/nexus/content/groups/public</url>
+      </repository>
     </repositories>
+    <pluginRepositories>
+      <pluginRepository>
+        <id>ohdsi</id>
+        <name>repo.ohdsi.org</name>
+        <url>https://repo.ohdsi.org/nexus/content/groups/public</url>
+      </pluginRepository>
+    </pluginRepositories>
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -50,12 +56,12 @@
         <dependency>
             <groupId>org.ohdsi</groupId>
             <artifactId>standardized-analysis-utils</artifactId>
-            <version>1.3.2</version>
+            <version>1.4.0</version>
         </dependency>
         <dependency>
             <groupId>org.ohdsi</groupId>
             <artifactId>circe</artifactId>
-            <version>1.9.4</version>
+            <version>1.11.1</version>
         </dependency>
 
         <dependency>
