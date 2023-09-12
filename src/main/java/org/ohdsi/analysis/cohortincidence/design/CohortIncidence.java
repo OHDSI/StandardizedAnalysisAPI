@@ -54,7 +54,10 @@ public class CohortIncidence {
 
 	@JsonProperty("subgroups")
 	public List<Subgroup> subgroups = new ArrayList<>();
-
+	
+	@JsonProperty("strataSettings")
+	public StratifySettings strataSettings;
+	
 	@JsonProperty("studyWindow")
 	public DateRange studyWindow;
 

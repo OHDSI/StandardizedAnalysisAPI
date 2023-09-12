@@ -24,11 +24,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class FieldOffset {
 
   public enum DateField {
-    StartDate, EndDate
+    @JsonProperty("start") Start, 
+    @JsonProperty("end") End
   }
   
   @JsonProperty("dateField")
-  public DateField dateField = DateField.StartDate;
+  public DateField dateField = DateField.Start;
 
   @JsonProperty("offset")
   public int offset = 0;
