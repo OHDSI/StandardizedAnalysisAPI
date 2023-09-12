@@ -25,7 +25,7 @@ public class FieldOffset {
 
   public enum DateField {
     @JsonProperty("start") Start, 
-		@JsonProperty("end") End
+    @JsonProperty("end") End
   }
   
   @JsonProperty("dateField")
