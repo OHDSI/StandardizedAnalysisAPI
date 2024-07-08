@@ -6,6 +6,7 @@
 package org.ohdsi.analysis.cohortincidence.design;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,7 +24,11 @@ public class StratifySettings {
 	@JsonProperty("byYear")
 	public boolean byYear;
 
+	@Deprecated
 	@JsonProperty("ageBreaks")
-	public List<Integer> ageBreaks;
+	public List<Integer> ageBreaks = new ArrayList<>();
+	
+	@JsonProperty("ageBreakList")
+	public List<List<Integer>> ageBreakList = new ArrayList<>();
 	
 }
