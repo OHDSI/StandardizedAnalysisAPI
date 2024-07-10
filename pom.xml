@@ -48,12 +48,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>29.0-jre</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.ohdsi</groupId>
             <artifactId>standardized-analysis-utils</artifactId>
             <version>1.4.0</version>
@@ -61,7 +55,7 @@
         <dependency>
             <groupId>org.ohdsi</groupId>
             <artifactId>circe</artifactId>
-            <version>1.11.1</version>
+            <version>1.11.3</version>
         </dependency>
 
         <dependency>
