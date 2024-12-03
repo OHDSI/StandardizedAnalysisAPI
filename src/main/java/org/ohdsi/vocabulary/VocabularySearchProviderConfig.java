@@ -1,10 +1,10 @@
 package org.ohdsi.vocabulary;
 
-public class SearchProviderConfig {
+public class VocabularySearchProviderConfig {
     private String sourceKey;
     private String versionKey;
     
-    public SearchProviderConfig(String sourceKey, String versionKey) {
+    public VocabularySearchProviderConfig(String sourceKey, String versionKey) {
         this.sourceKey = sourceKey;
         this.versionKey = versionKey;
     }
