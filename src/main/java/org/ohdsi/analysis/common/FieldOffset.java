@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  *
- * @author Chris Knoll <cknoll@ohdsi.org>
+ * @author Chris Knoll cknoll@ohdsi.org
  */
 public class FieldOffset {
 

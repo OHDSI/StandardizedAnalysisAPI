@@ -5,17 +5,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public enum TestSplitEnum {
 
-    /**
-     *
-     */
     TIME("time"),
-    /**
-     *
-     */
     PERSON("person");
 
     private final String value;
@@ -30,11 +24,6 @@ public enum TestSplitEnum {
         return String.valueOf(value);
     }
 
-    /**
-     *
-     * @param text
-     * @return
-     */
     @JsonCreator
     public static TestSplitEnum fromValue(String text) {
         for (TestSplitEnum b : TestSplitEnum.values()) {

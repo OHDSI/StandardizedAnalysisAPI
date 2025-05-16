@@ -8,7 +8,7 @@ import org.ohdsi.analysis.featureextraction.design.CovariateSettings;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public interface PositiveControlSynthesisArgs {
 

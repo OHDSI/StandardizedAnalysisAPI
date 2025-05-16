@@ -6,15 +6,11 @@ import java.math.BigDecimal;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 @JsonTypeName(ModelSettingsConst.LASSO_LOGISTIC_REGRESSION)
 public interface LassoLogisticRegressionSettings extends ModelSettings, SeedSettings {
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("variance")
     BigDecimal getVariance();
 }

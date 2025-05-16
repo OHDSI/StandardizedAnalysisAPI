@@ -5,28 +5,16 @@ import java.util.List;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public interface NegativeControlOutcomeCohortExpression {
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("occurrenceType")
     String getOccurrenceType();
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("detectOnDescendants")
     Boolean getDetectOnDescendants();
 
-    /**
-     *
-     * @return
-     */
     @JsonGetter("domains")
     List<String> getDomains();
 }

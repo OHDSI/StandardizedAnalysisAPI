@@ -9,7 +9,7 @@ import org.ohdsi.analysis.StudyPackage;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public interface EstimationAnalysis extends StudyPackage {
 
@@ -116,7 +116,7 @@ public interface EstimationAnalysis extends StudyPackage {
     /**
      * Get negativeControlExposureCohortDefinition
      *
-     * @param <T>
+     * @param <T> Class extending NegativeControlExposureCohortExpression
      * @return negativeControlExposureCohortDefinition
      *
      */
@@ -126,7 +126,7 @@ public interface EstimationAnalysis extends StudyPackage {
     /**
      * Get negativeControlOutcomeCohortDefinition
      *
-     * @param <T>
+     * @param <T> Class extending NegativeControlOutcomeCohortExpression
      * @return negativeControlOutcomeCohortDefinition
      *
      */

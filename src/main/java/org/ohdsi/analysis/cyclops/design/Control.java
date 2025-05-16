@@ -6,7 +6,7 @@ import org.ohdsi.analysis.RLangClass;
 
 /**
  *
- * @author Anthony Sena <https://github.com/anthonysena>
+ * @author Anthony Sena sena@ohdsi.org
  */
 public interface Control extends RLangClass {
 

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
 
 /**
  *
- * @author Chris Knoll <cknoll@ohdsi.org>
+ * @author Chris Knoll cknoll@ohdsi.org
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = As.WRAPPER_OBJECT)
 @JsonSubTypes({

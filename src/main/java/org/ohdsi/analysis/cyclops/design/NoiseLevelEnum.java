@@ -9,17 +9,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum NoiseLevelEnum {
 
-    /**
-     *
-     */
     SILENT("silent"),
-    /**
-     *
-     */
     QUIET("quiet"),
-    /**
-     *
-     */
     NOISY("noisy");
 
     private final String value;
@@ -34,11 +25,6 @@ public enum NoiseLevelEnum {
         return String.valueOf(value);
     }
 
-    /**
-     *
-     * @param text
-     * @return
-     */
     @JsonCreator
     public static NoiseLevelEnum fromValue(String text) {
         for (NoiseLevelEnum b : NoiseLevelEnum.values()) {

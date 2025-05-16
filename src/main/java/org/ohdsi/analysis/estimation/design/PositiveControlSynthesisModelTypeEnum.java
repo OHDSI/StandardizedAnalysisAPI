@@ -29,11 +29,6 @@ public enum PositiveControlSynthesisModelTypeEnum {
         return String.valueOf(value);
     }
 
-    /**
-     *
-     * @param text
-     * @return
-     */
     @JsonCreator
     public static PositiveControlSynthesisModelTypeEnum fromValue(String text) {
         for (PositiveControlSynthesisModelTypeEnum b : PositiveControlSynthesisModelTypeEnum.values()) {
