@@ -61,6 +61,12 @@ public class CohortIncidence {
 	@JsonProperty("studyWindow")
 	public DateRange studyWindow;
 
+	@JsonProperty("firstAtRisk")
+	public boolean firstAtRisk = false;
+	
+	@JsonProperty("firstPostOutcome")
+	public boolean firstPostOutcome = false;
+
 	public CohortIncidence() {
 	}
 	
